@@ -1,0 +1,18 @@
+//mixins
+@import './global/variables';
+@import './global/mixins';
+@import './global/reset';
+@import './global/functions/utilizes';
+@import './global/typography';
+@import './global/base';
+
+//lazy
+@import './global/lazy';
+
+// Components
+@import './components/animation';
+@import './components/buttons';
+@import './components/swiper';
+
+//pages
+@import './pages/pdp';

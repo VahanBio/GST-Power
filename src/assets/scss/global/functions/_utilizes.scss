@@ -1,0 +1,173 @@
+//get space
+@function space($key: '1') {
+    @return map-get($space, $key);
+}
+
+
+@function to-number($value) {
+    @if type-of($value) == 'number' {
+        @return $value;
+    } @else if type-of($value) != 'string' {
+        $_: log('Value for `to-number` should be a number or a string.');
+    }
+
+    $result: 0;
+    $digits: 0;
+    $minus: str-slice($value, 1, 1) == '-';
+    $numbers: (
+        '0': 0,
+        '1': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
+        '6': 6,
+        '7': 7,
+        '8': 8,
+        '9': 9,
+    );
+
+    @for $i from if($minus, 2, 1) through str-length($value) {
+        $character: str-slice($value, $i, $i);
+
+        @if not(index(map-keys($numbers), $character) or $character== '.') {
+            @return to-length(
+                if($minus, -$result, $result),
+                str-slice($value, $i)
+            );
+        }
+
+        @if $character== '.' {
+            $digits: 1;
+        } @else if $digits==0 {
+            $result: $result * 10 + map-get($numbers, $character);
+        } @else {
+            $digits: $digits * 10;
+            $result: $result + map-get($numbers, $character) / $digits;
+        }
+    }
+
+    @return if($minus, -$result, $result);
+}
+
+@function replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(
+                str-slice($string, $index + str-length($search)),
+                $search,
+                $replace
+            );
+    }
+
+    @return $string;
+}
+
+//generate theme text colors
+@each $color, $value in $colors {
+    .text-#{$color} {
+        color: $value !important;
+    }
+}
+
+
+//text format center
+@each $brkpoint, $value in $media-break-points {
+    @if $brkpoint == 'xs' {
+        .text-left {
+            text-align: left !important;
+        }
+        .text-right {
+            text-align: right !important;
+        }
+        .text-center {
+            text-align: center !important;
+        }
+
+    }@else {
+        @include media-breakpoint-up($brkpoint) {
+            .text-#{$brkpoint}-left {
+                text-align: left !important;
+            }
+            .text-#{$brkpoint}-right {
+                text-align: right !important;
+            }
+            .text-#{$brkpoint}-center {
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+//display block;
+@each $brkpoint, $value in $media-break-points {
+    @if $brkpoint == 'xs' {
+        .d-none {
+            display: none !important;
+        }
+        .d-block {
+            display: block !important;
+        }
+
+        .d-flex {
+            display: flex !important;
+        }
+
+        .d-inline-flex {
+            display: inline-flex !important;
+        }
+
+        .d-inline-block {
+            display: inline-block !important;
+        }
+
+        .d-grid {
+            display: grid !important;
+        }
+    } @else {
+        @include media-breakpoint-up($brkpoint) {
+            .d-#{$brkpoint}-none {
+                display: none !important;
+            }
+            .d-#{$brkpoint}-block {
+                display: block !important;
+            }
+    
+            .d-#{$brkpoint}-flex {
+                display: flex !important;
+            }
+    
+            .d-#{$brkpoint}-grid {
+                display: grid;
+            }
+        }
+    }
+}
+
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $brkpoint, $value in $media-break-points {
+    @each $id, $space in $space {
+        @each $side in $sides {
+            @if $brkpoint == 'xs' {
+                @if $side == 'top' {
+                    .m#{str-slice($side, 0, 1)}-#{$id} {
+                        margin-#{$side}: #{$space} !important;
+                    }
+                }@else if($side == 'bottom') {
+                    .m#{str-slice($side, 0, 1)}-#{$id} {
+                        margin-#{$side}: #{$space} !important;
+                    }
+                }
+            }@else {
+                @include media-breakpoint-up(#{$brkpoint}) {
+                    .m#{str-slice($side, 0, 1)}-#{$brkpoint}-#{$id} {
+                        margin-#{$side}: #{$space} !important;
+                    }
+                }
+            }
+        }
+    }
+}

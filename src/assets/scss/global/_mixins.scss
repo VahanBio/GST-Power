@@ -1,0 +1,56 @@
+@import "mixins/breakpoint",
+"mixins/center",
+"mixins/fonts",
+"mixins/placeholder";
+
+@function mat-color($palette, $hue: default, $opacity: null) {
+
+    // If hueKey is a number between zero and one, then it actually contains an
+    // opacity value, so recall this function with the default hue and that given opacity.
+    @if type-of($hue)==number and $hue>=0 and $hue <=1 {
+        @return mat-color($palette, default, $hue);
+    }
+
+    $color: map-get($palette, $hue);
+    $opacity: if($opacity==null, opacity($color), $opacity);
+
+    @return rgba($color, $opacity);
+}
+
+$default-pixel: 16;
+
+@function rem-cal($target-pixel) {
+    @return $target-pixel/$default-pixel+rem;
+}
+
+@mixin aspect-ratio-update($width, $height) {
+    &:before {
+        padding-top: ($height / $width) * 100%;
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@mixin opacity($value) {
+    $IEValue: $value * 100;
+    opacity: $value;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity='+ $IEValue + ')';
+    filter: alpha(opacity=$IEValue);
+}
