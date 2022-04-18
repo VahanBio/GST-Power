@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head }}
+</head>
+<body>
+
+    <div class="page">
+        <!-- Header -->
+       {{#unlesspage 'splash'}}
+            {{> header }}
+        {{/unlesspage}}
+
+        <!-- Main -->
+        <main class="main">
+            {{> body }}
+        </main>
+
+        <!-- footer -->
+        {{#unlesspage 'splash'}}
+            {{> footer }}
+        {{/unlesspage}}
+    </div>
+
+
+    <!-- JS -->
+    <script src="./assets/js/custom.min.js"></script>
+</body>
+</html>

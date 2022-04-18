@@ -1,0 +1,47 @@
+.animate-on-load,
+.animate-on-scroll,
+.fade-on-scroll,
+.fade-on-load {
+    opacity: 0;
+}
+
+.fade-on-scroll {
+    &.animate {
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
+    }
+}
+
+.animate-on-scroll {
+    &.animate {
+	animation-name: fadeInMoveUp;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+	opacity: 0;
+    }
+    to {
+	opacity: 1;
+    }
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+	opacity: 0;
+	transform: translateY(20px);
+	-webkit-backface-visibility: hidden;
+    }
+
+    100% {
+	opacity: 1;
+	transform: translateY(0);
+	-webkit-backface-visibility: hidden;
+    }
+}

@@ -1,0 +1,205 @@
+.pdp {
+    min-height: 100vh;
+    max-width: 1420px;
+    margin: auto;
+    padding: 85px 0 126px;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 52% 48%;
+        grid-gap: 7.4%;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-top: 8px;
+
+        .product {
+            &__info {
+                border-bottom: 1px solid $gray-600;
+                padding-bottom: 12px;
+                max-width: 372px;
+
+                &--subtitle {
+                    font-size: 13px;
+                    margin-bottom: 6px;
+                    color: $gray-500;
+                    letter-spacing: 0.8px;
+                }
+
+                &--title {
+                    font-size: 30px;
+                    margin-bottom: 5px;
+                    letter-spacing: 3px;
+                }
+
+                &--price {
+                    font-size: 20px;
+                    color: $gray-500;
+                }
+
+                &--descriptions {
+                    @include media-breakpoint-up(lg) {
+                        max-width: 465px;
+                    }
+
+                    .product__info--nav {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        @include media-breakpoint-up(lg) {
+                            margin-bottom: 32px;
+                        }
+
+                        a {
+                            font-size: 13px;
+                            letter-spacing: 0.6px;
+                            position: relative;
+                            padding-bottom: 5px;
+                            font-weight: 500;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                width: 0;
+                                height: 1px;
+                                background-color: $black;
+                                transition: all .3s ease;
+                            }
+                            &:hover::after{
+                                width: 100%;
+                            }
+                            &.tab--active::after{
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .description--content {
+                        @include media-breakpoint-up(lg){
+                            min-height: 331px;
+                        }
+                        &:not(:nth-child(2)) {
+                            display: none;
+                        }
+
+                        & > p {
+                            font-size: 14px;
+                            margin-bottom: 15px;
+                            letter-spacing: 0.3px;
+
+                            &:last-of-type {
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        & > div {
+                            h3 {
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                margin-bottom: 0;
+                                letter-spacing: 0.2px;
+                            }
+
+                            &:not(:last-of-type) {
+                                margin-bottom: 23px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__types {
+                margin: 15px 0 18px;
+
+                & > p {
+                    font-size: 13px;
+                    letter-spacing: 0.6px;
+                    color: $gray-500;
+                }
+
+                &--filters {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 12px 0 15px;
+                    max-width: 635px;
+
+                    label {
+                        font-size: 11px;
+                        padding: 5px 11px;
+                        letter-spacing: 0.4px;
+                        outline: 1.7px solid black;
+                        margin-bottom: 14px;
+                        cursor: pointer;
+                        @include media-breakpoint-up(lg) {
+                            &:not(:nth-child(3n)) {
+                                margin-right: 16px;
+                            }
+                        }
+                    }
+
+                    input {
+                        opacity: 0;
+                        position: absolute;
+
+                        &:checked + label {
+                            outline: 2px solid black;
+                        }
+                    }
+                }
+
+                & > .btn {
+                    width: 100%;
+                    @include media-breakpoint-up(lg) {
+                        max-width: 465px;
+                    }
+                }
+            }
+
+            &__quantity {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+
+                & > p {
+                    font-size: 13px;
+                    letter-spacing: 0.5px;
+                    margin-bottom: 6px;
+                }
+
+                &--counter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 1.5px solid $gray-400;
+                    max-width: 58px;
+
+                    & > p {
+                        font-size: 13px;
+                    }
+
+                    .btn {
+                        &-add, &-remove {
+                            padding: 3px 2px;
+                        }
+
+                        &-remove {
+                            border-right: 1.5px solid $gray-400;
+                        }
+
+                        &-add {
+                            border-left: 1.5px solid $gray-400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
