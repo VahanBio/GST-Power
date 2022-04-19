@@ -1,4 +1,4 @@
-//mixins
+// Global
 @import './global/variables';
 @import './global/mixins';
 @import './global/reset';
@@ -6,7 +6,7 @@
 @import './global/typography';
 @import './global/base';
 
-//lazy
+// Lazy
 @import './global/lazy';
 
 // Components
@@ -14,5 +14,6 @@
 @import './components/buttons';
 @import './components/swiper';
 
-//pages
-@import './pages/pdp';
+// Layouts
+@import './layouts/header';
+@import './layouts/footer';

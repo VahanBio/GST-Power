@@ -1,40 +1,14 @@
 $white: #fff !default;
-$white-light: #e2e2e2 !default;
-$ecru-white: #faf3e6 !default;
+
 $black: #000 !default;
-$black-light: #163651 !default;
-$black-200: #EEECEA !default;
-$black-500: #313131 !default;
-
-//gray
-$gray-100: #f8f8f8 !default;
-$gray-200: #ececec !default;
-$gray-300: #f2f2f2 !default;
-$gray-400: #dcdcdc !default;
-$gray-500: #666666 !default;
-$gray-600: #0d0e0f !default;
-$gray-700: #494949 !default;
-$gray-800: #3d3d3d !default;
-$gray-900: #232d36 !default;
-
-//green
-$green-300: #a6ce39 !default;
-$green-900: #577626 !default;
 
 //blue
 $blue-100: #d1dfe9 !default;
 $blue-900: #3336b8 !default;
 
-//organe 
-$red-100 : #fad3b5 !default;
-$red-900 : #C50248 !default;
-
-//theme color
-$successgreen: #78ec42 !default;
-
-$primary: $red-900;
+$primary: null;
 $secondary: null;
-$tertiary: $ecru-white;
+$tertiary: null;
 
 $bodyText: $black;
 
@@ -50,7 +24,7 @@ $colors: (
 	'text-black': $black,
 ) !default;
 
-$font-family-primary: 'Circular Std', sans-serif !default;
+$font-family-primary: 'Titillium Web', sans-serif !default;
 $font-family-secondary: 'Recife Display', sans-serif !default;
 
 $body-font: $font-family-primary;
@@ -62,13 +36,13 @@ $base-letter-spacing: normal;
 
 $base-radius: 4px;
 
-$extra-large-font: 10rem !default;
-$extra-large-font-m: 4.5rem !default;
-$h1-font-size: 4.5rem !default;
-$h1-font-size-m: 2.625rem !default;
-$h2-font-size: 3.25rem !default;
-$h2-font-size-m: 1.625rem !default;
-$h4-font-size: 1.5rem !default;
+$extra-large-font: 160px !default;
+$extra-large-font-m: 72px !default;
+$h1-font-size: 72px !default;
+$h1-font-size-m: 42px !default;
+$h2-font-size: 52px !default;
+$h2-font-size-m: 26px !default;
+$h4-font-size: 24px !default;
 
 // theme breakpoint
 $media-break-points: (

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-class Animate {
+export default class Animate {
     constructor(el, settings) {
         this.el = el;
         this.animateClass = settings.animateClassName;
@@ -9,34 +9,32 @@ class Animate {
     }
 
     init() {
-        var $animation_elements = $(this.el),
+        let animationElements = $(this.el),
             $window = $(window),
             _this = this;
 
-        function check_if_in_view() {
-            var window_height = $window.height(),
-                window_top_position = $window.scrollTop(),
-                window_bottom_position = (window_top_position + window_height);
+        function checkIfInView() {
+            let windowHeight = $window.height(),
+                windowTopPos = $window.scrollTop(),
+                windowBottomPos = (windowTopPos + windowHeight);
 
-            $.each($animation_elements, function () {
-                var $element = $(this),
-                    element_height = $element.outerHeight(),
-                    element_top_position = $element.offset().top + _this.offsetPos,
-                    element_bottom_position = (element_top_position + element_height);
+            $.each(animationElements, function () {
+                let $element = $(this),
+                    ElementHeight = $element.outerHeight(),
+                    ElementTopPos = $element.offset().top + _this.offsetPos,
+                    ElementBottomPos = (ElementTopPos + ElementHeight);
 
                 //check to see if this current container is within viewport
-                if (element_top_position <= window_bottom_position) {
+                if (ElementTopPos <= windowBottomPos) {
                     $element.addClass(_this.animateClass);
                 }
             });
         }
 
-        $window.on('scroll resize', check_if_in_view);
+        $window.on('scroll resize', checkIfInView);
         $window.trigger('scroll');
     }
 }
-
-export default Animate;
 
 //usage
 // new Animate('.fade-on-scroll', {
