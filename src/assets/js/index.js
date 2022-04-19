@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import LazyLoad from 'vanilla-lazyload';
-import Accordion from './modules/_accordion';
+import SmoothScroll from "./modules/_smooth-scroll";
 
 $(document).ready(() => {
-	new LazyLoad();
-
+    new LazyLoad();
+    new SmoothScroll()
 });

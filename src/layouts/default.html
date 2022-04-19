@@ -5,23 +5,18 @@
 </head>
 <body>
 
-    <div class="page">
-        <!-- Header -->
-       {{#unlesspage 'splash'}}
-            {{> header }}
-        {{/unlesspage}}
-
+    <main id="main-content" class="wrapper">
         <!-- Main -->
-        <main class="main">
-            {{> body }}
-        </main>
-
-        <!-- footer -->
-        {{#unlesspage 'splash'}}
+        <div class="page smooth-scroll" id="scroll-container">
+            <!-- Header -->
+            {{> header }}
+            <div class="page--wrapper">
+                {{> body }}
+            </div>
+            <!-- footer -->
             {{> footer }}
-        {{/unlesspage}}
-    </div>
-
+        </div>
+    </main>
 
     <!-- JS -->
     <script src="./assets/js/custom.min.js"></script>

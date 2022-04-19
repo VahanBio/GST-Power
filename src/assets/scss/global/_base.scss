@@ -61,25 +61,6 @@ button.reset {
     border: 0;
 }
 
-%bg {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1270px;
-    padding: 0 15px;
-    width: 100%;
-
-    &-lg {
-	@extend .container;
-	max-width: 1768px;
-    }
-}
-
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -87,50 +68,14 @@ button.reset {
     max-width: 1920px;
 }
 
-.align-items {
-    &-center {
-	align-items: center;
-    }
-
-    &-start {
-	align-items: flex-start;
-    }
-
-    &-end {
-	align-items: end;
-    }
-}
-
-.place-items-center {
-    place-items: center;
-}
-
-//Flex
-.flex-wrap {
-    flex-flow: row wrap;
-}
-
-.flex-column {
-    flex-direction: column;
+.smooth-scroll {
+    height: 100vh;
+    overflow: auto;
+    width: 100%;
 }
 
 .object-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-//text
-.text {
-    &-uppercase {
-	text-transform: uppercase;
-    }
-
-    &-center {
-	text-align: center;
-    }
-
-    &-end {
-	text-align: end;
-    }
 }
