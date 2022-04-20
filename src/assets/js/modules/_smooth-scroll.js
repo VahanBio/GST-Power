@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Scrollbar from 'smooth-scrollbar';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

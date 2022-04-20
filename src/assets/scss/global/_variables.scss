@@ -1,14 +1,17 @@
 $white: #fff !default;
-
 $black: #000 !default;
 
-//blue
-$blue-100: #d1dfe9 !default;
-$blue-900: #3336b8 !default;
+// Main Colors
+$blue-500: #547890 !default;
+$red-500: #aa2d2c !default;
+$white-200: #f9f9f9 !default;
 
-$primary: null;
-$secondary: null;
-$tertiary: null;
+// Gray
+$gray-800: #2C2D32 !default;
+
+$primary: $blue-500;
+$secondary: $red-500;
+$tertiary: $white-200;
 
 $bodyText: $black;
 
@@ -25,7 +28,7 @@ $colors: (
 ) !default;
 
 $font-family-primary: 'Titillium Web', sans-serif !default;
-$font-family-secondary: 'Recife Display', sans-serif !default;
+$font-family-secondary: 'Inter', sans-serif !default;
 
 $body-font: $font-family-primary;
 
@@ -38,10 +41,12 @@ $base-radius: 4px;
 
 $extra-large-font: 160px !default;
 $extra-large-font-m: 72px !default;
-$h1-font-size: 72px !default;
+$h1-font-size: 65px !default;
 $h1-font-size-m: 42px !default;
 $h2-font-size: 52px !default;
 $h2-font-size-m: 26px !default;
+$h3-font-size: 45px !default;
+$h3-font-size-m: 32px !default;
 $h4-font-size: 24px !default;
 
 // theme breakpoint
