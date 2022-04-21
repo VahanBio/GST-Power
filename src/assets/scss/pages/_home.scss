@@ -13,18 +13,21 @@
 	    @include text(null, 80px, $white, 600, null, null);
 	    text-transform: uppercase;
 	    @extend %align-center;
+	    @include media-breakpoint-down(lg){
+		line-height: 49px;
+	    }
 
 	    span {
-		font-size: 105px;
-		letter-spacing: -2px;
+		font-size: 65px;
+		@include media-breakpoint-up(lg){
+		    font-size: 105px;
+		    letter-spacing: -2px;
+		}
 	    }
 	}
     }
 
     &__sidebar{
-	@include media-breakpoint-down(lg){
-	    display: none;
-	}
 	height: 100%;
 	width: 80px;
 	position: absolute;
@@ -32,11 +35,17 @@
 	left: 0;
 	background-color: rgba($gray-800, 0.6);
 	padding: 26px 12px;
+	@include media-breakpoint-down(lg){
+	    display: none;
+	}
     }
 
     &__coordinates {
 	position: absolute;
 	top: 30px;
+	@include media-breakpoint-down(lg){
+	    display: none;
+	}
 
 	&::after {
 	    content: '';
@@ -88,6 +97,8 @@
 	top: 0;
 	left: 0;
 	z-index: -1;
+	width: 100%;
+	height: 100%;
 
 	&::after {
 	    content: '';
