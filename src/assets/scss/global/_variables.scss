@@ -2,8 +2,9 @@ $white: #fff !default;
 $black: #000 !default;
 
 // Main Colors
-$blue-500: #547890 !default;
-$red-500: #aa2d2c !default;
+$blue-500: rgb(81, 118, 144) !default;
+$blue-600: rgb(18, 41, 52) !default;
+$red-500: rgb(242, 72, 65) !default;
 $white-200: #f9f9f9 !default;
 
 // Gray
@@ -20,11 +21,11 @@ $outline-primary: 1px solid $primary;
 
 //only colors
 $colors: (
-	'text-primary': $primary,
-	'text-secondary': $secondary,
-	'text-tertiary': $tertiary,
-	'text-white': $white,
-	'text-black': $black,
+        'text-primary': $primary,
+        'text-secondary': $secondary,
+        'text-tertiary': $tertiary,
+        'text-white': $white,
+        'text-black': $black,
 ) !default;
 
 $font-family-primary: 'Titillium Web', sans-serif !default;
@@ -51,30 +52,30 @@ $h4-font-size: 24px !default;
 
 // theme breakpoint
 $media-break-points: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1440px,
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1440px,
 ) !default;
 
 //space
 $space: (
-	'0': 0,
-	'1': 4px,
-	'2': 8px,
-	'3': 12px,
-	'4': 16px,
-	'5': 20px,
-	'6': 24px,
-	'7': 28px,
-	'8': 32px,
-	'9': 36px,
-	'10': 40px,
-	'11': 44px,
-	'12': 48px,
-	'13': 52px,
-	'14': 56px,
-	'15': 60px,
+        '0': 0,
+        '1': 4px,
+        '2': 8px,
+        '3': 12px,
+        '4': 16px,
+        '5': 20px,
+        '6': 24px,
+        '7': 28px,
+        '8': 32px,
+        '9': 36px,
+        '10': 40px,
+        '11': 44px,
+        '12': 48px,
+        '13': 52px,
+        '14': 56px,
+        '15': 60px,
 ) !default;

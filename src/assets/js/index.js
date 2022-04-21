@@ -13,4 +13,9 @@ $(document).ready(() => {
         animateClassName: 'animate',
         offset: 50,
     });
+
+    new Animate('.animate-right', {
+        animateClassName: 'animate',
+        offset: 50,
+    });
 });
