@@ -61,6 +61,12 @@ button.reset {
     border: 0;
 }
 
+.page--wrapper {
+    @include media-breakpoint-down(lg) {
+	padding-top: 84px;
+    }
+}
+
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -85,4 +91,18 @@ span {
     color: inherit;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
+}
+
+.dark-layer {
+    position: relative;
+
+    &::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba($black, 0.2);
+    }
 }
