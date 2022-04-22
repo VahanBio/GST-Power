@@ -13,6 +13,40 @@
         @include media-breakpoint-up(lg) {
             position: relative;
         }
+
+        .dropdown--close {
+            @extend %btn-reset;
+            position: relative;
+            pointer-events: none;
+
+            &::before, &::after {
+                content: '';
+                height: 2px;
+                width: 22px;
+                position: absolute;
+                right: 0;
+                opacity: 0;
+                transition: all .5s ease;
+                transform: rotate(0);
+                background-color: $white-200;
+            }
+
+            &.active {
+                pointer-events: auto;
+
+                &::before, &::after {
+                    opacity: 1;
+                }
+
+                &::before {
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
     }
 
     &__logo {
@@ -26,15 +60,14 @@
     &__list {
         @include media-breakpoint-down(lg) {
             height: 100vh;
-            width: 85%;
-            background-color: $blue-600;
+            width: 100%;
+            background-color: rgba($blue-600, 0.4);
             position: absolute;
             left: -100%;
             top: 84px;
             z-index: 99;
             padding: 120px 25px 20px;
-            transition: left .3s ease-in-out;
-            box-shadow: 5px 7px 17px -3px rgba(0, 0, 0, 0.76);
+            transition: all .5s ease;
         }
         @include media-breakpoint-up(lg) {
             display: flex;
@@ -46,27 +79,25 @@
         &--open {
             @include media-breakpoint-down(lg) {
                 left: 0;
+                background-color: $blue-600;
             }
 
             .nav__list {
-                &--item {
-                    @for $y from 1 through 50 {
-                        &:nth-child(#{$y}) {
-                            @include media-breakpoint-up(lg) {
-                                .nav__list--toggler {
-                                    transition-delay: #{$y * 0.1}s;
-                                }
-                            }
-                        }
-                    }
-                }
 
                 &--toggler {
                     @include media-breakpoint-up(lg) {
                         opacity: 0;
-                        transform: translateY(-20px);
+                        transform: translateX(-20px);
                         pointer-events: none;
                     }
+                }
+            }
+        }
+
+        &--toggler {
+            &:hover {
+                &::before {
+                    transform: translateY(-50%) rotate(120deg);
                 }
             }
         }
@@ -74,9 +105,12 @@
         &--link {
             @include media-breakpoint-up(lg) {
                 opacity: 0;
-                transform: translateY(15px);
+                transform: translateX(15px);
                 pointer-events: none;
                 transition: all .5s ease-in-out;
+                &::before {
+                    transform: translateY(-50%) rotate(120deg)!important;
+                }
             }
         }
 
@@ -121,14 +155,22 @@
         }
 
         &--item {
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
             @include media-breakpoint-up(lg) {
                 &:not(:last-of-type) {
                     margin-right: 50px;
                 }
-            }
-            @include media-breakpoint-down(lg) {
-                margin-bottom: 20px;
-                width: 100%;
+                @for $y from 1 through 50 {
+                    &:nth-child(#{$y}) {
+                        .nav__list--toggler {
+                            transition-delay: #{$y * 0.1}s;
+                        }
+                    }
+                }
             }
 
             a {
@@ -139,6 +181,7 @@
                 }
                 @include media-breakpoint-up(lg) {
                     position: relative;
+                    left: 35px;
                     margin-top: -20px;
                     transition: all .5s ease;
                     &::before {
@@ -147,15 +190,11 @@
                         left: -30px;
                         width: 15px;
                         height: 1px;
-                        background-color: $white-200;
+                        background-color: $red-500;
                         transition: all .3s ease;
                     }
                     &:hover {
                         color: $red-500;
-
-                        &::before {
-                            background-color: $red-500;
-                        }
                     }
                 }
             }
@@ -164,7 +203,7 @@
 
     &__toggle {
         @extend %btn-reset;
-        width: 45px;
+        width: 30px;
         height: 2px;
         background-color: $white-200;
         position: relative;
@@ -175,7 +214,7 @@
         &::before, &::after {
             content: '';
             transition: all .3s ease;
-            width: 45px;
+            width: 30px;
             height: 2px;
             background-color: $white-200;
             position: absolute;
@@ -208,12 +247,12 @@
 @keyframes slideUp {
     0% {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateX(15px);
         pointer-events: none;
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
         pointer-events: auto;
     }
 }
