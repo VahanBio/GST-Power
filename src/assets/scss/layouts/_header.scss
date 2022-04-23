@@ -1,6 +1,16 @@
 .header {
     width: 100%;
 
+    &__home {
+        @include media-breakpoint-up(lg){
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+
     &__inner {
         padding: 15px;
         width: 100%;

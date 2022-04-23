@@ -6,8 +6,8 @@ import Animate from "./modules/_animation";
 
 $(document).ready(() => {
     new LazyLoad()
-    new SmoothScroll()
     new Header()
+    // new SmoothScroll()
 
     new Animate('.animate-on-scroll', {
         animateClassName: 'animate',

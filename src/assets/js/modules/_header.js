@@ -6,14 +6,47 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default class Header {
     constructor() {
-        this.navToggle = $('.nav__toggle')
-        this.dropBtn = $('.dropdown--toggle')
         this.init()
     }
 
     init() {
+        this.fixedHeader()
         this.navMobile()
         this.navDropdowns()
+    }
+
+    fixedHeader() {
+        const stickyTL = gsap
+            .timeline({
+                onUpdate: () => {
+                    console.log(stickyTL.scrollTrigger.trigger.children);
+                    stickyTL.scrollTrigger.spacer.style.height =
+                        document.querySelector('.header__inner').offsetHeight + 'px';
+                    stickyTL.scrollTrigger.trigger.style.height =
+                        document.querySelector('.header__inner').offsetHeight + 'px';
+                },
+                scrollTrigger: {
+                    trigger: '.header__inner',
+                    start: 'top top',
+                    toggleActions: 'play none none reverse',
+                    pinSpacing: false,
+                    pin: true,
+                    top: 0,
+                    end: document.querySelector('.smooth-scroll').scrollHeight,
+                    anticipatePin: 1,
+                    onEnter: () => {
+                        stickyTL.timeScale(2.5);
+                    },
+                },
+
+            })
+            .progress(1);
+        stickyTL
+            .to('.nav__logo', {
+                opacity: 1,
+                visibility: 'visible',
+                duration: 0.3,
+            })
     }
 
     navMobile() {

@@ -10,6 +10,7 @@
         "gulp-sourcemaps": "^3.0.0",
         "gulp-svg-sprite": "^1.5.0",
         "jquery": "^3.6.0",
+        "scrolltofixed": "^1.0.6",
         "smooth-scrollbar": "^8.7.4",
         "swiper": "^8.0.7",
         "vanilla-lazyload": "^17.3.1"
