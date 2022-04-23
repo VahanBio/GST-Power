@@ -63,7 +63,7 @@ button.reset {
 
 .page--wrapper {
     @include media-breakpoint-down(lg) {
-	padding-top: 84px;
+	//padding-top: 84px;
     }
 }
 
@@ -76,7 +76,7 @@ button.reset {
 
 .smooth-scroll {
     height: 100vh;
-    overflow: auto;
+    //overflow: auto;
     width: 100%;
 }
 

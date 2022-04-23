@@ -1,214 +1,258 @@
 .nav {
     width: 100%;
     @include media-breakpoint-down(lg) {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__inner {
-	display: flex;
-	align-items: center;
-	overflow: hidden;
-	@include media-breakpoint-up(lg) {
-	    position: relative;
-	}
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        @include media-breakpoint-up(lg) {
+            position: relative;
+        }
+
+        .dropdown--close {
+            @extend %btn-reset;
+            position: relative;
+            pointer-events: none;
+
+            &::before, &::after {
+                content: '';
+                height: 2px;
+                width: 22px;
+                position: absolute;
+                right: 0;
+                opacity: 0;
+                transition: all .5s ease;
+                transform: rotate(0);
+                background-color: $white-200;
+            }
+
+            &.active {
+                pointer-events: auto;
+
+                &::before, &::after {
+                    opacity: 1;
+                }
+
+                &::before {
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
     }
 
     &__logo {
-	@include media-breakpoint-up(lg) {
-	    opacity: 0;
-	    visibility: hidden;
-	    margin-right: 80px;
-	}
+        @include media-breakpoint-up(lg) {
+            opacity: 0;
+            visibility: hidden;
+            margin-right: 80px;
+        }
     }
 
     &__list {
-	@include media-breakpoint-down(lg) {
-	    height: 100vh;
-	    width: 85%;
-	    background-color: $blue-600;
-	    position: absolute;
-	    left: -100%;
-	    top: 84px;
-	    z-index: 99;
-	    padding: 120px 25px 20px;
-	    transition: left .3s ease-in-out;
-	    box-shadow: 5px 7px 17px -3px rgba(0, 0, 0, 0.76);
-	}
-	@include media-breakpoint-up(lg) {
-	    display: flex;
-	    align-items: center;
-	    position: relative;
-	    width: 100%;
-	}
+        @include media-breakpoint-down(lg) {
+            height: 100vh;
+            width: 100%;
+            background-color: rgba($blue-600, 0.4);
+            position: absolute;
+            left: -100%;
+            top: 84px;
+            z-index: 99;
+            padding: 120px 25px 20px;
+            transition: all .5s ease;
+        }
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
 
-	&--open {
-	    @include media-breakpoint-down(lg) {
-		left: 0;
-	    }
+        &--open {
+            @include media-breakpoint-down(lg) {
+                left: 0;
+                background-color: $blue-600;
+            }
 
-	    .nav__list {
-		&--item {
-		    @for $y from 1 through 50 {
-			&:nth-child(#{$y}) {
-			    @include media-breakpoint-up(lg) {
-				.nav__list--toggler {
-				    transition-delay: #{$y * 0.1}s;
-				}
-			    }
-			}
-		    }
-		}
+            .nav__list {
 
-		&--toggler {
-		    @include media-breakpoint-up(lg) {
-			opacity: 0;
-			transform: translateY(-20px);
-			pointer-events: none;
-		    }
-		}
-	    }
-	}
+                &--toggler {
+                    @include media-breakpoint-up(lg) {
+                        opacity: 0;
+                        transform: translateX(-20px);
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
 
-	&--link {
-	    @include media-breakpoint-up(lg) {
-		opacity: 0;
-		transform: translateY(15px);
-		pointer-events: none;
-		transition: all .5s ease-in-out;
-	    }
-	}
+        &--toggler {
+            &:hover {
+                &::before {
+                    transform: translateY(-50%) rotate(120deg);
+                }
+            }
+        }
 
-	&--dropdown {
-	    @include media-breakpoint-down(lg) {
-		display: none;
-		margin-top: 30px;
-	    }
+        &--link {
+            @include media-breakpoint-up(lg) {
+                opacity: 0;
+                transform: translateX(15px);
+                pointer-events: none;
+                transition: all .5s ease-in-out;
+                &::before {
+                    transform: translateY(-50%) rotate(120deg)!important;
+                }
+            }
+        }
 
-	    @include media-breakpoint-up(lg) {
-		display: flex;
-		align-items: center;
-		position: absolute;
-		left: 0;
-	    }
+        &--dropdown {
+            @include media-breakpoint-down(lg) {
+                display: none;
+                margin-top: 30px;
+            }
 
-	    a {
-		@include media-breakpoint-down(lg) {
-		    display: block;
-		}
+            @include media-breakpoint-up(lg) {
+                display: flex;
+                align-items: center;
+                position: absolute;
+                left: 0;
+            }
 
-		&:not(:last-of-type) {
-		    @include media-breakpoint-down(lg) {
-			margin-bottom: 20px;
-		    }
-		    @include media-breakpoint-up(lg) {
-			margin-right: 70px;
-		    }
-		}
-	    }
+            a {
+                @include media-breakpoint-down(lg) {
+                    display: block;
+                }
 
-	    &--open {
-		.nav__list--link {
-		    animation: slideUp 1s ease forwards;
-		    @for $i from 1 through 50 {
-			&:nth-child(#{$i}) {
-			    animation-delay: #{$i * 0.2}s;
-			}
-		    }
-		}
-	    }
-	}
+                &:not(:last-of-type) {
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: 20px;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        margin-right: 70px;
+                    }
+                }
+            }
 
-	&--item {
-	    @include media-breakpoint-up(lg) {
-		&:not(:last-of-type) {
-		    margin-right: 50px;
-		}
-	    }
-	    @include media-breakpoint-down(lg) {
-		margin-bottom: 20px;
-		width: 100%;
-	    }
+            &--open {
+                .nav__list--link {
+                    animation: slideUp 1s ease forwards;
+                    @for $i from 1 through 50 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: #{$i * 0.2}s;
+                        }
+                    }
+                }
+            }
+        }
 
-	    a {
-		color: $white-200;
-		@include media-breakpoint-down(lg) {
-		    letter-spacing: 3px;
-		}
-		@include media-breakpoint-up(lg) {
-		    position: relative;
-		    margin-top: -20px;
-		    transition: all .5s ease-in-out;
-		    &::before {
-			content: '';
-			@include center(vertical);
-			left: -30px;
-			width: 15px;
-			height: 1px;
-			background-color: $white-200;
-			transition: all .3s ease-in-out;
-		    }
-		    &:hover {
-			color: $red-500;
-		    }
-		}
-	    }
-	}
+        &--item {
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                &:not(:last-of-type) {
+                    margin-right: 50px;
+                }
+                @for $y from 1 through 50 {
+                    &:nth-child(#{$y}) {
+                        .nav__list--toggler {
+                            transition-delay: #{$y * 0.1}s;
+                        }
+                    }
+                }
+            }
+
+            a {
+                color: $white-200;
+                text-transform: uppercase;
+                @include media-breakpoint-down(lg) {
+                    letter-spacing: 3px;
+                }
+                @include media-breakpoint-up(lg) {
+                    position: relative;
+                    left: 35px;
+                    margin-top: -20px;
+                    transition: all .5s ease;
+                    &::before {
+                        content: '';
+                        @include center(vertical);
+                        left: -30px;
+                        width: 15px;
+                        height: 1px;
+                        background-color: $red-500;
+                        transition: all .3s ease;
+                    }
+                    &:hover {
+                        color: $red-500;
+                    }
+                }
+            }
+        }
     }
 
     &__toggle {
-	@extend %btn-reset;
-	width: 45px;
-	height: 2px;
-	background-color: $white-200;
-	position: relative;
-	@include media-breakpoint-up(lg) {
-	    display: none;
-	}
+        @extend %btn-reset;
+        width: 30px;
+        height: 2px;
+        background-color: $white-200;
+        position: relative;
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
 
-	&::before, &::after {
-	    content: '';
-	    transition: all .3s ease;
-	    width: 45px;
-	    height: 2px;
-	    background-color: $white-200;
-	    position: absolute;
-	    right: 0;
-	}
+        &::before, &::after {
+            content: '';
+            transition: all .3s ease;
+            width: 30px;
+            height: 2px;
+            background-color: $white-200;
+            position: absolute;
+            right: 0;
+        }
 
-	&::before {
-	    top: -10px;
-	}
+        &::before {
+            top: -10px;
+        }
 
-	&::after {
-	    top: 10px;
-	}
+        &::after {
+            top: 10px;
+        }
 
-	&--active {
-	    transform: rotate(45deg);
+        &--active {
+            transform: rotate(45deg);
 
-	    &::before {
-		width: 0;
-	    }
+            &::before {
+                width: 0;
+            }
 
-	    &::after {
-		top: 0;
-		transform: rotate(90deg);
-	    }
-	}
+            &::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+        }
     }
 }
 
 @keyframes slideUp {
     0% {
-	opacity: 0;
-	transform: translateY(15px);
-	pointer-events: none;
+        opacity: 0;
+        transform: translateX(15px);
+        pointer-events: none;
     }
     100% {
-	opacity: 1;
-	transform: translateY(0);
-	pointer-events: auto;
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
     }
 }
