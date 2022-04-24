@@ -27,16 +27,17 @@
 	    }
 
 	    &__coordinates {
-		position: absolute;
-		top: 30px;
 		@include media-breakpoint-down(lg) {
 		    display: none;
 		}
 
+		position: absolute;
+		top: 30px;
+
 		&::after {
 		    content: '';
 		    width: 25px;
-		    height: 1px;
+		    height: 2px;
 		    background-color: $red-500;
 		    @include center(vertical);
 		    left: -40px;

@@ -10,6 +10,14 @@
 	    bottom: 0;
 	    z-index: 1;
 	}
+
+	.nav__logo {
+	    @include media-breakpoint-up(lg) {
+		opacity: 0;
+		visibility: hidden;
+		margin-right: 30px;
+	    }
+	}
     }
 
     &__inner {
