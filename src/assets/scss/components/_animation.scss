@@ -1,71 +1,93 @@
-.animate-on-load,
 .animate-on-scroll,
 .fade-on-scroll,
-.fade-on-load,
-.animate-right {
+.animate-right,
+.animate-down {
     opacity: 0;
 }
 
 .fade-on-scroll {
     &.animate {
-        animation-name: fadeIn;
-        animation-duration: 1.5s;
-        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-        animation-fill-mode: forwards;
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
     }
 }
 
 .animate-on-scroll {
     &.animate {
-        animation-name: fadeInMoveUp;
-        animation-duration: 1.5s;
-        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-        animation-fill-mode: forwards;
+	animation-name: fadeInMoveUp;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
     }
 }
 
 .animate-right {
     &.animate {
-        animation-name: fadeRight;
-        animation-duration: 1.5s;
-        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-        animation-fill-mode: forwards;
+	animation-name: fadeRight;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
+    }
+}
+
+.animate-down {
+    &.animate {
+	animation-name: fadeDown;
+	animation-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	animation-fill-mode: forwards;
     }
 }
 
 @keyframes fadeIn {
     0% {
-        opacity: 0;
+	opacity: 0;
     }
     to {
-        opacity: 1;
+	opacity: 1;
     }
 }
 
 @keyframes fadeInMoveUp {
     0% {
-        opacity: 0;
-        transform: translateY(50px);
-        -webkit-backface-visibility: hidden;
+	opacity: 0;
+	transform: translateY(50px);
+	-webkit-backface-visibility: hidden;
     }
 
     100% {
-        opacity: 1;
-        transform: translateY(0);
-        -webkit-backface-visibility: hidden;
+	opacity: 1;
+	transform: translateY(0);
+	-webkit-backface-visibility: hidden;
     }
 }
 
 @keyframes fadeRight {
     0% {
-        opacity: 0;
-        transform: translateX(-50px);
-        -webkit-backface-visibility: hidden;
+	opacity: 0;
+	transform: translateX(-50px);
+	-webkit-backface-visibility: hidden;
     }
 
     100% {
-        opacity: 1;
-        transform: translateX(0);
-        -webkit-backface-visibility: hidden;
+	opacity: 1;
+	transform: translateX(0);
+	-webkit-backface-visibility: hidden;
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+	opacity: 0;
+	transform: translateY(-50px);
+	-webkit-backface-visibility: hidden;
+    }
+
+    100% {
+	opacity: 1;
+	transform: translateY(0);
+	-webkit-backface-visibility: hidden;
     }
 }
