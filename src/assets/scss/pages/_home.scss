@@ -1,113 +1,136 @@
 //Hero section
 .hero {
+    $hero: #{&};
     height: 100vh;
     width: 100%;
     overflow: hidden;
 
     &__inner {
 	height: 100%;
-	position: relative;
-	@extend %full-center;
-
-	& > h1 {
-	    @include text(null, 80px, $white, 600, null, null);
-	    text-transform: uppercase;
-	    @extend %align-center;
-	    @include media-breakpoint-down(lg){
-		line-height: 49px;
-	    }
-
-	    span {
-		font-size: 65px;
-		@include media-breakpoint-up(lg){
-		    font-size: 105px;
-		    letter-spacing: -2px;
-		}
-	    }
-	}
-    }
-
-    &__sidebar{
-	height: 100%;
-	width: 80px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: rgba($blue-600, 0.6);
-	padding: 26px 12px;
-	@include media-breakpoint-down(lg){
-	    display: none;
-	}
-    }
-
-    &__coordinates {
-	position: absolute;
-	top: 30px;
-	@include media-breakpoint-down(lg){
-	    display: none;
-	}
-
-	&::after {
-	    content: '';
-	    width: 25px;
-	    height: 1px;
-	    background-color: $red-500;
-	    @include center(vertical);
-	    left: -40px;
-	}
-
-	&--container {
+	@include media-breakpoint-up(lg) {
 	    position: relative;
-	    overflow: hidden;
-	    color: rgba($white, 0.9);
+	}
 
-	    & > p {
-		display: inline-block;
-		transition: all .3s ease-in-out;
-		letter-spacing: 10px;
+	#{$hero} {
+	    &__image {
+		height: 100%;
+		position: relative;
+		@extend %full-center;
+	    }
 
-		&:first-of-type {
-		    margin-right: 25px;
-		    @include media-breakpoint-up(lg) {
-			margin-right: 50px;
+	    &__video {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	    }
+
+	    &__coordinates {
+		position: absolute;
+		top: 30px;
+		@include media-breakpoint-down(lg) {
+		    display: none;
+		}
+
+		&::after {
+		    content: '';
+		    width: 25px;
+		    height: 1px;
+		    background-color: $red-500;
+		    @include center(vertical);
+		    left: -40px;
+		}
+
+		&--container {
+		    position: relative;
+		    overflow: hidden;
+		    color: rgba($white, 0.9);
+
+		    & > p {
+			display: inline-block;
+			transition: all .3s ease-in-out;
+			letter-spacing: 10px;
+
+			&:first-of-type {
+			    margin-right: 25px;
+			    @include media-breakpoint-up(lg) {
+				margin-right: 50px;
+			    }
+			}
+		    }
+
+		    & > a {
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			left: 0;
+			transition: all .3s ease-in-out;
+			letter-spacing: 10px;
+			text-align: center;
+		    }
+
+		    &:hover {
+			a, p {
+			    transform: translateY(-100%);
+			}
 		    }
 		}
 	    }
 
-	    & > a {
-		position: absolute;
-		top: 100%;
-		width: 100%;
-		left: 0;
-		transition: all .3s ease-in-out;
-		letter-spacing: 10px;
-		text-align: center;
-	    }
+	    &__description {
+		@extend %full-center;
 
-	    &:hover {
-		a, p {
-		    transform: translateY(-100%);
+		& > h1 {
+		    @include text(null, 80px, $white, 600, null, null);
+		    text-transform: uppercase;
+		    @extend %align-center;
+		    margin-bottom: 25px;
+		    @include media-breakpoint-down(lg) {
+			line-height: 49px;
+		    }
+
+		    span {
+			font-size: 65px;
+			@include media-breakpoint-up(lg) {
+			    font-size: 105px;
+			    letter-spacing: -2px;
+			}
+		    }
 		}
 	    }
-	}
-    }
 
-    &__background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
+	    &__sidebar {
+		height: 100%;
+		width: 80px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba($blue-600, 0.6);
+		padding: 26px 12px;
+		@include media-breakpoint-down(lg) {
+		    display: none;
+		}
+	    }
 
-	&::after {
-	    content: '';
-	    width: 100%;
-	    height: 100%;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    background-color: rgba($black, 0.2);
+	    &__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+
+		&::after {
+		    content: '';
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    background-color: rgba($black, 0.2);
+		}
+	    }
 	}
     }
 }

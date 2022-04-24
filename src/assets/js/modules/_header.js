@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {clickOutSide} from "./_utils";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,43 +11,43 @@ export default class Header {
     }
 
     init() {
-        this.fixedHeader()
+        this.stickyHeader()
         this.navMobile()
         this.navDropdowns()
     }
 
-    fixedHeader() {
-        const stickyTL = gsap
-            .timeline({
-                onUpdate: () => {
-                    console.log(stickyTL.scrollTrigger.trigger.children);
-                    stickyTL.scrollTrigger.spacer.style.height =
-                        document.querySelector('.header__inner').offsetHeight + 'px';
-                    stickyTL.scrollTrigger.trigger.style.height =
-                        document.querySelector('.header__inner').offsetHeight + 'px';
-                },
-                scrollTrigger: {
-                    trigger: '.header__inner',
-                    start: 'top top',
-                    toggleActions: 'play none none reverse',
-                    pinSpacing: false,
-                    pin: true,
-                    top: 0,
-                    end: document.querySelector('.smooth-scroll').scrollHeight,
-                    anticipatePin: 1,
-                    onEnter: () => {
-                        stickyTL.timeScale(2.5);
+    stickyHeader() {
+        if ($(window).width() > 992) {
+            const timeline = gsap
+                .timeline({
+                    onUpdate: () => {
+                        timeline.scrollTrigger.spacer.style.height =
+                            document.querySelector('.header__home').offsetHeight + 'px';
+                        timeline.scrollTrigger.trigger.style.height =
+                            document.querySelector('.header__home').offsetHeight + 'px';
                     },
-                },
-
-            })
-            .progress(1);
-        stickyTL
-            .to('.nav__logo', {
-                opacity: 1,
-                visibility: 'visible',
-                duration: 0.3,
-            })
+                    scrollTrigger: {
+                        trigger: '.header__home',
+                        start: 'top top',
+                        toggleActions: 'play none none reverse',
+                        end: document.body.scrollHeight,
+                        pinSpacing: false,
+                        pin: true,
+                        top: 0,
+                        anticipatePin: 1,
+                        onEnter: () => {
+                            timeline.timeScale(2.5);
+                        },
+                    },
+                })
+                .progress(1);
+            timeline
+                .to('.nav__logo', {
+                    opacity: 1,
+                    visibility: 'visible',
+                    duration: 0.5,
+                })
+        }
     }
 
     navMobile() {
@@ -85,6 +86,16 @@ export default class Header {
                 $('.nav__list--item').removeClass('nav__list--active')
                 $('.nav__list').removeClass('nav__list--open')
                 $('.nav__list--dropdown').removeClass('nav__list--dropdown--open')
+            })
+
+            clickOutSide({
+                ele: '.header__inner',
+                callback: () => {
+                    $('.dropdown--close').removeClass('active')
+                    $('.nav__list--item').removeClass('nav__list--active')
+                    $('.nav__list').removeClass('nav__list--open')
+                    $('.nav__list--dropdown').removeClass('nav__list--dropdown--open')
+                }
             })
         }
     }

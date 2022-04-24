@@ -9,6 +9,11 @@ $(document).ready(() => {
     new Header()
     // new SmoothScroll()
 
+    new Animate('.fade-on-scroll', {
+        animateClassName: 'animate',
+        offset: 0,
+    });
+
     new Animate('.animate-on-scroll', {
         animateClassName: 'animate',
         offset: 50,
