@@ -21,11 +21,11 @@ $outline-primary: 1px solid $primary;
 
 //only colors
 $colors: (
-        'text-primary': $primary,
-        'text-secondary': $secondary,
-        'text-tertiary': $tertiary,
-        'text-white': $white,
-        'text-black': $black,
+        'primary': $primary,
+        'secondary': $secondary,
+        'tertiary': $tertiary,
+        'white': $white,
+        'black': $black,
 ) !default;
 
 $font-family-primary: 'Titillium Web', sans-serif !default;

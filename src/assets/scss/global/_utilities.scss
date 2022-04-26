@@ -40,6 +40,24 @@ span {
     }
 }
 
+.text-title-stroke {
+    position: relative;
+    padding-left: 25px;
+    @include media-breakpoint-up(lg) {
+	padding-left: 45px;
+    }
+
+    &::before {
+	content: '';
+	width: 2px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $red-500;
+    }
+}
+
 // Extends
 %full-center {
     display: flex;

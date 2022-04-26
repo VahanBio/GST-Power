@@ -45,6 +45,7 @@ h2,
 h3, .h3 {
     font-size: $h3-font-size-m;
     font-family: $font-family-secondary;
+    font-weight: 800;
     @include media-breakpoint-up(lg) {
 	font-size: $h3-font-size;
     }
@@ -54,6 +55,11 @@ h4,
 .h4,
 .sub-title {
     font-size: $h4-font-size;
+    font-weight: 600;
+    line-height: 24px;
+    @include media-breakpoint-down(lg){
+        font-size: 11px;
+    }
 }
 
 a {

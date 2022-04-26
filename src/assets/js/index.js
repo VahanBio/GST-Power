@@ -23,4 +23,5 @@ $(document).ready(() => {
         animateClassName: 'animate',
         offset: 50,
     });
+
 });

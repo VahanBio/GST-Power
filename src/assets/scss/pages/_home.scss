@@ -135,3 +135,27 @@
 	}
     }
 }
+
+//Services section
+.services {
+    background-color: $white;
+
+    &__inner {
+	padding: 50px 25px;
+	@include media-breakpoint-up(lg) {
+	    padding: 150px;
+	}
+    }
+
+    &__description {
+
+
+	h3 {
+	    margin-bottom: 25px;
+	    @include media-breakpoint-down(lg) {
+		margin-bottom: 18px;
+		font-size: 30px;
+	    }
+	}
+    }
+}
