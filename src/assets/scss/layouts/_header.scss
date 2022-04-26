@@ -1,6 +1,7 @@
 .header {
     & > .pin-spacer {
 	width: 100% !important;
+	z-index: 99 !important;
     }
 
     &__home {
