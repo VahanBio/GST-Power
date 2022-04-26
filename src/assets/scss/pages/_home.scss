@@ -186,17 +186,9 @@
 		    }
 		}
 
-		&:not(:last-of-type) {
-
-		}
-
-		&:first-of-type {
-
-		}
-
 		&:nth-child(2n+2) {
 		    @include media-breakpoint-up(lg) {
-			margin: 100px 0 0 0;
+			margin-top: 100px;
 		    }
 		}
 
