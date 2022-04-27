@@ -24,6 +24,9 @@ span {
     color: inherit;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
+    @include media-breakpoint-down(lg) {
+        letter-spacing: 1.2px;
+    }
 }
 
 .dark-layer {
@@ -55,6 +58,10 @@ span {
 	top: 0;
 	left: 0;
 	background-color: $red-500;
+        @include media-breakpoint-up(lg) {
+            width: 4px;
+            left: -1px;
+        }
     }
 }
 
