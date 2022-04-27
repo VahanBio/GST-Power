@@ -16,11 +16,6 @@
 }
 
 .line {
-    &-container {
-        position: relative;
-        z-index: 1;
-    }
-
     &-item {
         height: 100%;
         border-right: 1px solid rgba($blue-600, 0.1);
@@ -77,11 +72,6 @@
         }
     }
 }
-
-.container.full-height {
-    z-index: 6;
-}
-
 
 @keyframes scroll3 {
     0% {
