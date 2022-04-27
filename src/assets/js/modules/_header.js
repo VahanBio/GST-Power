@@ -22,15 +22,15 @@ export default class Header {
                 .timeline({
                     onUpdate: () => {
                         timeline.scrollTrigger.spacer.style.height =
-                            document.querySelector('.header__home').offsetHeight + 'px';
+                            document.querySelector('.header__inner').offsetHeight + 'px';
                         timeline.scrollTrigger.trigger.style.height =
-                            document.querySelector('.header__home').offsetHeight + 'px';
+                            document.querySelector('.header__inner').offsetHeight + 'px';
                     },
                     scrollTrigger: {
                         trigger: '.header__home',
                         start: 'top top',
                         toggleActions: 'play none none reverse',
-                        end: document.body.scrollHeight,
+                        end: '+=80000000000',
                         pinSpacing: false,
                         pin: true,
                         top: 0,
@@ -40,12 +40,17 @@ export default class Header {
                         },
                     },
                 })
-                .progress(1);
+                .progress(0.5);
             timeline
                 .to('.nav__logo', {
                     opacity: 1,
                     visibility: 'visible',
                     duration: 0.5,
+                })
+            timeline
+                .to('.header__inner', {
+                    backgroundColor: 'rgb(18, 41, 52)',
+                    duration: 0.3,
                 })
         }
     }

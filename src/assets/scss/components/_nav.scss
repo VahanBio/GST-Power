@@ -49,17 +49,9 @@
 	}
     }
 
-    &__logo {
-	@include media-breakpoint-up(lg) {
-	    opacity: 0;
-	    visibility: hidden;
-	    margin-right: 30px;
-	}
-    }
-
     &__list {
 	@include media-breakpoint-down(lg) {
-	    height: calc(100vh - 40px);
+	    height: calc(100vh - 60px);
 	    width: 100%;
 	    overflow: auto;
 	    background-color: rgba($blue-600, 0.4);
@@ -67,7 +59,7 @@
 	    left: -100%;
 	    top: 84px;
 	    z-index: 99;
-	    padding: 120px 25px 40px;
+	    padding: 120px 25px 60px;
 	    transition: all .5s ease;
 	}
 
@@ -87,7 +79,7 @@
 		&--open {
 		    .dropdown--toggle::after {
 			@include media-breakpoint-down(lg) {
-			    transform: rotate(0);
+			    transform: rotate(120deg);
 			}
 		    }
 		}
@@ -102,6 +94,12 @@
 			.nav__list--toggler {
 			    transition-delay: #{$y * 0.1}s;
 			}
+		    }
+		}
+
+		&:hover {
+		    .nav__list--toggler {
+			//transition-delay: unset;
 		    }
 		}
 	    }
@@ -161,16 +159,17 @@
 	    }
 	    @include media-breakpoint-down(lg) {
 		letter-spacing: 3px;
+		padding-left: 35px;
 		&::after {
 		    content: '';
 		    width: 15px;
 		    height: 2px;
 		    background-color: $red-500;
 		    position: absolute;
-		    right: 0;
-		    top: 5px;
+		    left: 0;
+		    top: 8px;
 		    transition: transform .2s ease;
-		    transform: rotate(120deg);
+		    transform: rotate(0);
 		}
 	    }
 	}
