@@ -1,0 +1,24 @@
+{
+  "HomePosts": [
+    {
+      "imageUrl": "/assets/images/home/works01.jpg",
+      "title": "Darkness Vehicle",
+      "subTitle": "Digital, Paint, Development"
+    },
+    {
+      "imageUrl": "/assets/images/home/works02.jpg",
+      "title": "Goddess Cover Art",
+      "subTitle": "Print, Digital, Development"
+    },
+    {
+      "imageUrl": "/assets/images/home/works03.jpg",
+      "title": "Hard Employee",
+      "subTitle": "Web, Digital, Development"
+    },
+    {
+      "imageUrl": "/assets/images/home/works04.jpg",
+      "title": "Sweet Berry Pie",
+      "subTitle": "Web, Digital, Development"
+    }
+  ]
+}

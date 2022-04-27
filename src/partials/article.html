@@ -1,0 +1,14 @@
+<article class="posts__item animate-on-scroll">
+    <a href="#.">
+        <div class="posts__background" style="background-image: url(./assets/images/home/dot-pattern.png)"></div>
+        <picture class="posts__image">
+            <source media="(min-width: 992px)" data-srcset="{{ArticleImage}}">
+            <source media="(min-width: 325px)" data-srcset="{{ArticleImage}}">
+            <img class="lazy object-cover" data-src="{{ArticleImage}}"
+                 width="550" height="550"
+                 alt="Blog Image">
+        </picture>
+        <h4>{{ArticleTitle}}</h4>
+        <p>{{ArticleSubtitle}}</p>
+    </a>
+</article>

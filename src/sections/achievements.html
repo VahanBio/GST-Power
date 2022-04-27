@@ -1,0 +1,32 @@
+<!--Begin Achievements-->
+<section class="info achievement__container">
+    {{> info-inner
+        strokeText="Out"
+        title="Achievements"
+        description="Lorem ipsum dolor sit amet, consectetur adipisicing. Adipisci asperiores doloremque in laboriosam."
+    }}
+    <div class="achievement">
+        <div class="achievement__progress animate-on-scroll">
+            <div class="progress--info" style="background-color: rgb(242, 72, 65)">
+                <h3 class="progress__animate" data-count="200">0</h3>
+                <p>A diverse and global community of independent thinkers make up our inclusive workplace.</p>
+            </div>
+            <div class="progress--info" style="background-color: rgb(18, 41, 52)">
+                <h3 class="progress__animate" data-count="300">0</h3>
+                <p>A diverse and global community of independent thinkers make up our inclusive workplace.</p>
+            </div>
+            <div class="progress--info" style="background-color: rgb(255, 255, 255)">
+                <h3 class="progress__animate" data-count="400" style="color: #000000;">0</h3>
+                <p style="color: #000000;">A diverse and global community of independent thinkers make up our inclusive workplace.</p>
+            </div>
+        </div>
+        <picture class="achievement__image">
+            <source media="(min-width: 992px)" data-srcset="./assets/images/svgs/bul-img2.svg">
+            <source media="(min-width: 325px)" data-srcset="./assets/images/svgs/bul-img2.svg">
+            <img class="lazy object-cover" data-src="./assets/images/svgs/bul-img2.svg" width="525"
+                 alt="Blog Image">
+        </picture>
+    </div>
+    {{> animated-lines}}
+</section>
+<!--./End Achievements-->

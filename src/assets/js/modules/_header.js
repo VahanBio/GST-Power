@@ -1,6 +1,5 @@
 import $ from 'jquery'
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {gsap, ScrollTrigger} from "gsap/all";
 import {clickOutSide} from "./_utils";
 
 gsap.registerPlugin(ScrollTrigger)
@@ -35,6 +34,7 @@ export default class Header {
                         pin: true,
                         top: 0,
                         anticipatePin: 1,
+                        refreshPriority: 1,
                         onEnter: () => {
                             timeline.timeScale(2.5);
                         },

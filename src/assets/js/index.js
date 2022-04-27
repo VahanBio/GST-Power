@@ -3,10 +3,12 @@ import LazyLoad from 'vanilla-lazyload';
 import SmoothScroll from "./modules/_smooth-scroll";
 import Header from "./modules/_header";
 import Animate from "./modules/_animation";
+import Home from "./modules/_home";
 
 $(document).ready(() => {
     new LazyLoad()
     new Header()
+    new Home()
     // new SmoothScroll()
 
     new Animate('.fade-on-scroll', {
@@ -24,4 +26,12 @@ $(document).ready(() => {
         offset: 50,
     });
 
+    //Tab - change content
+    $('.pdp__nav--button').on('click', function (e) {
+        $('.description--content').hide();
+        $($(this).attr('href')).show();
+        $(this).addClass('tab--active')
+        $(this).siblings().removeClass('tab--active')
+        e.preventDefault()
+    })
 });
