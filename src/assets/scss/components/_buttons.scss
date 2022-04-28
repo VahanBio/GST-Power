@@ -17,6 +17,9 @@
 	text-align: center;
 	background-color: $gray-800;
 	font-size: 16px;
+	@include media-breakpoint-down(lg){
+	    margin: 0 auto;
+	}
 
 	&::after {
 	    content: '';
