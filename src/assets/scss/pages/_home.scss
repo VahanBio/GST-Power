@@ -235,6 +235,10 @@
                 @include media-breakpoint-up(lg) {
                     width: 100%;
                     object-fit: cover;
+                    height: 75vh;
+                }
+                @include media-breakpoint-between(lg, xxl) {
+                    height: 65vh;
                 }
             }
         }

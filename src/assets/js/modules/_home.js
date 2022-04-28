@@ -1,7 +1,7 @@
 import $ from 'jquery'
-import {gsap, ScrollTrigger} from "gsap/all";
+import {gsap, ScrollTrigger, TweenLite} from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, TweenLite)
 
 export default class Home {
     constructor() {
@@ -22,11 +22,12 @@ export default class Home {
                 decimals = split.length > 1 ? split[1].length : 0
 
             const numTl = gsap.to(zero, {
-                start: 'top bottom',
-                toggleActions: 'play none none none',
+                start: 'top center',
+                toggleActions: 'play none none reverse',
                 val: num,
                 duration: 4,
                 scrollTrigger: {
+                    // markers: true,
                     trigger: element,
                     onEnter: () => {
                         numTl.scrollTrigger.refresh()
