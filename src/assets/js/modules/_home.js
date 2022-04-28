@@ -1,7 +1,7 @@
 import $ from 'jquery'
-import {gsap, ScrollTrigger, TweenLite} from "gsap/all";
+import {gsap, ScrollTrigger} from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger, TweenLite)
+gsap.registerPlugin(ScrollTrigger)
 
 export default class Home {
     constructor() {

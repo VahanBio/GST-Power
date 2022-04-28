@@ -6,39 +6,66 @@
     color: $white;
     @extend %btn-reset;
     @include media-breakpoint-up(lg) {
-        font-size: 18px;
+	font-size: 18px;
+    }
+
+    &-solid-primary {
+	position: relative;
+	width: fit-content;
+	padding: 16px 50px 16px 25px;
+	transition: padding-left .5s;
+	text-align: center;
+	background-color: $gray-800;
+	font-size: 16px;
+	@include media-breakpoint-down(lg){
+	    margin: 0 auto;
+	}
+
+	&::after {
+	    content: '';
+	    width: 60px;
+	    height: 1.5px;
+	    @include center(vertical);
+	    left: auto;
+	    right: -25px;
+	    background-image: linear-gradient(to right, $secondary 0, $secondary 35%, $secondary 65%, transparent 100%);
+	}
+
+	&:hover {
+	    padding-left: 50px;
+	}
     }
 
     &-link-secondary {
-        position: relative;
-        width: fit-content;
-        padding-bottom: 5px;
+	position: relative;
+	width: fit-content;
+	padding-bottom: 5px;
 
-        &::after, &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            left: 0;
-            bottom: 0;
-        }
+	&::after, &::before {
+	    content: '';
+	    position: absolute;
+	    width: 100%;
+	    height: 1px;
+	    left: 0;
+	    bottom: 0;
+	}
 
-        &::before {
-            background-color: $red-500;
-            transform: scaleX(0);
-            z-index: 1;
-            transition: transform .5s ease;
-        }
+	&::before {
+	    background-color: $red-500;
+	    transform: scaleX(0);
+	    z-index: 1;
+	    transition: transform .5s ease;
+	}
 
-        &::after {
-            background-color: $white;
-        }
+	&::after {
+	    background-color: $white;
+	}
 
-        &:hover {
-            &::before {
-                transform-origin: center;
-                transform: scaleX(1);
-            }
-        }
+	&:hover {
+	    &::before {
+		transform-origin: center;
+		transform: scaleX(1);
+	    }
+	}
     }
 }
