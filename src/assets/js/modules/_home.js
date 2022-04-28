@@ -19,18 +19,20 @@ export default class Home {
                 zero = {val: 0},
                 num = count.data("count"),
                 split = (num + "").split("."),
-                decimals = split.length > 1 ? split[1].length : 0;
+                decimals = split.length > 1 ? split[1].length : 0
 
-            gsap.to(zero, {
-                start: 'top top',
-                end: 'top 0',
+            const numTl = gsap.to(zero, {
+                start: 'top bottom',
                 toggleActions: 'play none none none',
                 val: num,
                 duration: 4,
                 scrollTrigger: {
-                    trigger: element
+                    trigger: element,
+                    onEnter: () => {
+                        numTl.scrollTrigger.refresh()
+                    }
                 },
-                onUpdate: function () {
+                onUpdate: () => {
                     count.text(zero.val.toFixed(decimals));
                 }
             });
@@ -42,19 +44,19 @@ export default class Home {
             let tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.achievement__container',
-                    start: 'top center',
+                    start: 'top bottom',
                     immediateRender: false,
                     toggleActions: 'play none none reverse',
                     scrub: true,
                     onEnter: () => {
-                        ScrollTrigger.refresh()
+                        tl.scrollTrigger.refresh()
                     }
                 },
             });
             tl.to('.achievement__image', {
-                width: '38%',
-                duration: 10,
-            });
+                maxWidth: '720px',
+                duration: 4,
+            })
         }
     }
 }
