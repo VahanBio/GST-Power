@@ -26,9 +26,14 @@ $(document).ready(() => {
         offset: 50,
     });
 
+    new Animate('.animate-left', {
+        animateClassName: 'animate',
+        offset: 50,
+    });
+
     //Tab - change content
-    $('.pdp__nav--button').on('click', function (e) {
-        $('.description--content').hide();
+    $('.tab--button').on('click', function (e) {
+        $('.tab--content').hide();
         $($(this).attr('href')).show();
         $(this).addClass('tab--active')
         $(this).siblings().removeClass('tab--active')

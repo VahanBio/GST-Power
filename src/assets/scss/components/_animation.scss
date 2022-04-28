@@ -1,44 +1,38 @@
 .animate-on-scroll,
 .fade-on-scroll,
 .animate-right,
+.animate-left,
 .animate-down {
     opacity: 0;
-}
 
-.fade-on-scroll {
     &.animate {
-	animation-name: fadeIn;
 	animation-duration: 1.5s;
 	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 	animation-fill-mode: forwards;
     }
 }
 
-.animate-on-scroll {
-    &.animate {
-	animation-name: fadeInMoveUp;
-	animation-duration: 1.5s;
-	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-	animation-fill-mode: forwards;
+.fade-on-scroll.animate {
+    animation-name: fadeIn;
+}
+
+.animate-on-scroll.animate {
+    animation-name: fadeInMoveUp;
+}
+
+.animate-right.animate {
+    animation-name: fadeRight;
+}
+
+.animate-left.animate {
+    animation-name: fadeInMoveUp;
+    @include media-breakpoint-up(lg){
+	animation-name: fadeLeft;
     }
 }
 
-.animate-right {
-    &.animate {
-	animation-name: fadeRight;
-	animation-duration: 1.5s;
-	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-	animation-fill-mode: forwards;
-    }
-}
-
-.animate-down {
-    &.animate {
-	animation-name: fadeDown;
-	animation-duration: 1.5s;
-	transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-	animation-fill-mode: forwards;
-    }
+.animate-down.animate {
+    animation-name: fadeDown;
 }
 
 @keyframes fadeIn {
@@ -68,6 +62,20 @@
     0% {
 	opacity: 0;
 	transform: translateX(-50px);
+	-webkit-backface-visibility: hidden;
+    }
+
+    100% {
+	opacity: 1;
+	transform: translateX(0);
+	-webkit-backface-visibility: hidden;
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+	opacity: 0;
+	transform: translateX(50px);
 	-webkit-backface-visibility: hidden;
     }
 
