@@ -6,133 +6,133 @@
     overflow: hidden;
 
     &__inner {
-	height: 100%;
-	@include media-breakpoint-up(lg) {
-	    position: relative;
-	}
+        height: 100%;
+        @include media-breakpoint-up(lg) {
+            position: relative;
+        }
 
-	#{$hero} {
-	    &__image {
-		height: 100%;
-		position: relative;
-		@extend %full-center;
-	    }
+        #{$hero} {
+            &__image {
+                height: 100%;
+                position: relative;
+                @extend %full-center;
+            }
 
-	    &__video {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-	    }
+            &__video {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
 
-	    &__coordinates {
-		@include media-breakpoint-down(lg) {
-		    display: none;
-		}
+            &__coordinates {
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
 
-		position: absolute;
-		top: 30px;
+                position: absolute;
+                top: 30px;
 
-		&::after {
-		    content: '';
-		    width: 25px;
-		    height: 2px;
-		    background-color: $red-500;
-		    @include center(vertical);
-		    left: -40px;
-		}
+                &::after {
+                    content: '';
+                    width: 25px;
+                    height: 2px;
+                    background-color: $red-500;
+                    @include center(vertical);
+                    left: -40px;
+                }
 
-		&--container {
-		    position: relative;
-		    overflow: hidden;
-		    color: rgba($white, 0.9);
+                &--container {
+                    position: relative;
+                    overflow: hidden;
+                    color: rgba($white, 0.9);
 
-		    & > p {
-			display: inline-block;
-			transition: all .3s ease-in-out;
-			letter-spacing: 10px;
+                    & > p {
+                        display: inline-block;
+                        transition: all .3s ease-in-out;
+                        letter-spacing: 10px;
 
-			&:first-of-type {
-			    margin-right: 25px;
-			    @include media-breakpoint-up(lg) {
-				margin-right: 50px;
-			    }
-			}
-		    }
+                        &:first-of-type {
+                            margin-right: 25px;
+                            @include media-breakpoint-up(lg) {
+                                margin-right: 50px;
+                            }
+                        }
+                    }
 
-		    & > a {
-			position: absolute;
-			top: 100%;
-			width: 100%;
-			left: 0;
-			transition: all .3s ease-in-out;
-			letter-spacing: 10px;
-			text-align: center;
-		    }
+                    & > a {
+                        position: absolute;
+                        top: 100%;
+                        width: 100%;
+                        left: 0;
+                        transition: all .3s ease-in-out;
+                        letter-spacing: 10px;
+                        text-align: center;
+                    }
 
-		    &:hover {
-			a, p {
-			    transform: translateY(-100%);
-			}
-		    }
-		}
-	    }
+                    &:hover {
+                        a, p {
+                            transform: translateY(-100%);
+                        }
+                    }
+                }
+            }
 
-	    &__description {
-		@extend %full-center;
+            &__description {
+                @extend %full-center;
 
-		& > h1 {
-		    @include text(null, 80px, $white, 600, null, null);
-		    text-transform: uppercase;
-		    @extend %align-center;
-		    margin-bottom: 25px;
-		    @include media-breakpoint-down(lg) {
-			line-height: 49px;
-		    }
+                & > h1 {
+                    @include text(null, 80px, $white, 600, null, null);
+                    text-transform: uppercase;
+                    @extend %align-center;
+                    margin-bottom: 25px;
+                    @include media-breakpoint-down(lg) {
+                        line-height: 49px;
+                    }
 
-		    span {
-			font-size: 65px;
-			@include media-breakpoint-up(lg) {
-			    font-size: 105px;
-			    letter-spacing: -2px;
-			}
-		    }
-		}
-	    }
+                    span {
+                        font-size: 65px;
+                        @include media-breakpoint-up(lg) {
+                            font-size: 105px;
+                            letter-spacing: -2px;
+                        }
+                    }
+                }
+            }
 
-	    &__sidebar {
-		height: 100%;
-		width: 80px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: rgba($blue-600, 0.6);
-		padding: 26px 12px;
-		@include media-breakpoint-down(lg) {
-		    display: none;
-		}
-	    }
+            &__sidebar {
+                height: 100%;
+                width: 80px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba($blue-600, 0.6);
+                padding: 26px 12px;
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
+            }
 
-	    &__background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		width: 100%;
-		height: 100%;
+            &__background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
 
-		&::after {
-		    content: '';
-		    width: 100%;
-		    height: 100%;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    background-color: rgba($black, 0.2);
-		}
-	    }
-	}
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($black, 0.2);
+                }
+            }
+        }
     }
 }
 
@@ -143,101 +143,105 @@
     background-color: $blue-600;
     padding: 50px 25px;
     @include media-breakpoint-up(lg) {
-	padding: 67px 80px;
+        padding: 67px 80px;
     }
 
     &__inner {
-	display: grid;
-	@include media-breakpoint-up(lg) {
-	    grid-template-columns: repeat(2, 1fr);
-	    grid-gap: 5px 90px;
-	}
+        display: grid;
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5px 90px;
+        }
 
-	#{$posts} {
-	    &__item {
-		@include media-breakpoint-up(lg) {
-		    width: 100%;
-		    @for $i from 1 through 15 {
-			&:nth-child(#{$i}) {
-			    animation-delay: #{$i * 0.1}s;
-			}
-		    }
-		}
+        #{$posts} {
+            &__item {
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
+                    @for $i from 1 through 15 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: #{$i * 0.1}s;
+                        }
+                    }
+                }
 
-		&:nth-child(2n+2) {
-		    @include media-breakpoint-up(lg) {
-			margin-top: 100px;
-		    }
-		}
+                &:nth-child(2n+2) {
+                    @include media-breakpoint-up(lg) {
+                        margin-top: 100px;
+                    }
+                }
 
-		@include media-breakpoint-down(lg) {
-		    &:not(:last-of-type) {
-			margin-bottom: 50px;
-		    }
-		}
+                @include media-breakpoint-down(lg) {
+                    &:not(:last-of-type) {
+                        margin-bottom: 50px;
+                    }
+                }
 
-		a {
-		    position: relative;
-		    width: 100%;
+                a {
+                    position: relative;
+                    width: 100%;
 
-		    &:hover {
-			#{$posts} {
-			    &__image {
-				box-shadow: 15px 15px 30px rgba($black, 0.3);
-				transform: translateY(-10px);
-			    }
+                    &:hover {
+                        #{$posts} {
+                            &__image {
+                                box-shadow: 15px 15px 30px rgba($black, 0.3);
+                                transform: translateY(-10px);
+                            }
 
-			    &__background {
-				opacity: 1;
-				transform: translateY(-10px);
-			    }
-			}
-		    }
-		}
+                            &__background {
+                                opacity: 1;
+                                transform: translateY(-10px);
+                            }
+                        }
+                    }
+                }
 
-		h4, p {
-		    color: $white;
-		}
+                h4, p {
+                    color: $white;
+                }
 
-		h4 {
-		    margin-bottom: 10px;
-		    text-transform: capitalize;
-		    font-size: 30px;
-		}
+                h4 {
+                    margin-bottom: 10px;
+                    text-transform: capitalize;
+                    font-size: 30px;
+                }
 
-		p {
-		    text-transform: uppercase;
-		    font-size: 18px;
-		}
-	    }
+                p {
+                    text-transform: uppercase;
+                    font-size: 18px;
+                }
+            }
 
-	    &__background {
-		width: 90%;
-		height: 30%;
-		position: absolute;
-		right: -45px;
-		bottom: 50px;
-		z-index: 1;
-		background-size: 10px;
-		opacity: 0;
-		transition: 0.25s ease-in-out;
-		@include media-breakpoint-down(lg) {
-		    right: -24px;
-		    bottom: 58px;
-		}
-	    }
+            &__background {
+                width: 90%;
+                height: 30%;
+                position: absolute;
+                right: -45px;
+                bottom: 50px;
+                z-index: 1;
+                background-size: 10px;
+                opacity: 0;
+                transition: 0.25s ease-in-out;
+                @include media-breakpoint-down(lg) {
+                    right: -24px;
+                    bottom: 58px;
+                }
+            }
 
-	    &__image {
-		position: relative;
-		z-index: 2;
-		transition: 0.25s ease-in-out;
-		margin-bottom: 30px;
-		@include media-breakpoint-up(lg) {
-		    width: 100%;
-		    object-fit: cover;
-		}
-	    }
-	}
+            &__image {
+                position: relative;
+                z-index: 2;
+                transition: 0.25s ease-in-out;
+                margin-bottom: 30px;
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 75vh;
+                }
+                @include media-breakpoint-between(lg, xxl) {
+                    height: 65vh;
+                }
+            }
+        }
     }
 }
 
@@ -246,74 +250,78 @@
     width: 100%;
     position: relative;
     @include media-breakpoint-down(lg) {
-	padding: 0 26px;
+        padding: 0 26px;
     }
 
     &__container {
-	@include media-breakpoint-up(lg) {
-	    padding-bottom: 120px;
-	}
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 120px;
+        }
 
-	.info__inner {
-	    @include media-breakpoint-up(lg) {
-		padding-top: 120px;
-		padding-bottom: 80px;
-	    }
-	}
+        .info__inner {
+            @include media-breakpoint-up(lg) {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+        }
     }
 
     &__progress {
-	display: grid;
-	@include media-breakpoint-up(lg) {
-	    grid-template-columns: repeat(2, 43%);
-	    grid-template-areas: "a ." "b c";
-	    max-width: 72%;
-	    margin: 0 auto;
-	}
+        display: grid;
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(2, 413px);
+            grid-template-areas: "a ." "b c";
+            margin: 0 auto;
+            max-width: 72%;
+        }
+        @include media-breakpoint-between(lg, xl) {
+            max-width: 84.5%;
+        }
 
-	.progress {
-	    &--info {
-		padding: 50px;
-		@include media-breakpoint-up(lg) {
-		    &:nth-child(1) {
-			grid-area: a;
-		    }
-		    &:nth-child(2) {
-			grid-area: b;
-		    }
-		    &:nth-child(3) {
-			grid-area: c;
-		    }
-		}
+        .progress {
+            &--info {
+                padding: 50px;
+                @include media-breakpoint-up(lg) {
+                    &:nth-child(1) {
+                        grid-area: a;
+                    }
+                    &:nth-child(2) {
+                        grid-area: b;
+                    }
+                    &:nth-child(3) {
+                        grid-area: c;
+                    }
+                }
 
-		h3 {
-		    font-weight: 400;
-		    margin-bottom: 10px;
-		    font-size: 70px;
-		    letter-spacing: 2px;
-		}
+                h3 {
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                    font-size: 70px;
+                    letter-spacing: 2px;
+                }
 
-		p {
-		    line-height: 1.6;
-		}
+                p {
+                    line-height: 1.6;
+                }
 
-		h3, p {
-		    color: $white;
-		}
-	    }
-	}
+                h3, p {
+                    color: $white;
+                }
+            }
+        }
     }
 
     &__image {
-	position: absolute;
-	top: -159px;
-	right: 27px;
-	width: 125px;
-	z-index: -1;
-	@include media-breakpoint-up(lg) {
-	    top: -50px;
-	    right: 0;
-	    width: 50%;
-	}
+        position: absolute;
+        top: -159px;
+        right: 27px;
+        width: 125px;
+        z-index: -1;
+        @include media-breakpoint-up(lg) {
+            //top: -50px;
+            right: 0;
+            width: 100%;
+            max-width: 450px;
+        }
     }
 }
