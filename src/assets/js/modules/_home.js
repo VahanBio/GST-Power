@@ -9,11 +9,27 @@ export default class Home {
     }
 
     init() {
-        this.achievementCounter()
-        this.achievementImgScale()
+        this.HPLeftRightAnim()
+        this.AchievementCounter()
+        this.AchievementImgScale()
     }
 
-    achievementCounter() {
+    HPLeftRightAnim() {
+        gsap.fromTo('.hero__sidebar',
+            {
+                translateX: '-100%',
+                backgroundColor: 'rgba(18, 51, 52, 1)'
+            },
+            {
+                translateX: 0,
+                backgroundColor: 'rgba(18, 41, 52, 0.6)',
+                delay: 0.2,
+                duration: 1.2,
+                ease: 'Power2.easeOut',
+            })
+    }
+
+    AchievementCounter() {
         $(".progress__animate").each(function (index, element) {
             const count = $(this),
                 zero = {val: 0},
@@ -40,7 +56,7 @@ export default class Home {
         });
     }
 
-    achievementImgScale() {
+    AchievementImgScale() {
         if ($(window).width() >= 992) {
             let tl = gsap.timeline({
                 scrollTrigger: {
