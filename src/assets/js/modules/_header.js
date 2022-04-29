@@ -16,7 +16,7 @@ export default class Header {
     }
 
     stickyHeader() {
-        if ($(window).width() > 992) {
+        if ($(window).width() >= 992) {
             const timeline = gsap
                 .timeline({
                     onUpdate: () => {

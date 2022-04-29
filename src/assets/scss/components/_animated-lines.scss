@@ -40,9 +40,9 @@
                 width: 4px;
                 height: 30px;
                 z-index: -1;
-                animation: scroll3 8s linear infinite;
+                animation: scroll3 10s linear infinite;
                 @include media-breakpoint-down(lg) {
-                    animation-duration: 10s;
+                    animation-duration: 13s;
                     width: 2px;
                     right: -2px;
                 }
@@ -57,9 +57,9 @@
             width: 4px;
             height: 30px;
             z-index: -1;
-            animation: scroll2 6s linear infinite;
+            animation: scroll2 9s linear infinite;
             @include media-breakpoint-down(lg) {
-                animation-duration: 8s;
+                animation-duration: 12s;
                 width: 2px;
                 right: -2px;
             }
