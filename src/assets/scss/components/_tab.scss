@@ -1,0 +1,9 @@
+.tab {
+    &--content {
+	display: none;
+
+	&:first-of-type {
+	    display: block;
+	}
+    }
+}

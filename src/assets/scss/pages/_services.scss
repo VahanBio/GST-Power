@@ -1,0 +1,146 @@
+.service {
+    $service: #{&};
+    background-position: 0 -117px;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    margin-bottom: 50px;
+    @include media-breakpoint-up(lg) {
+	margin-bottom: 150px;
+    }
+
+    &__hero {
+	padding: 15px 25px;
+	@include media-breakpoint-up(lg) {
+	    padding: 120px 100px;
+	}
+    }
+
+    &__wrapper {
+	display: grid;
+	grid-gap: 25px;
+	margin: 0 25px;
+	@include media-breakpoint-up(lg) {
+	    margin: 0 35px 0 25px;
+	    grid-gap: 10px;
+	    grid-template-columns: 20% 80%;
+	}
+
+	#{$service} {
+	    &__nav, &__description {
+		padding: 50px 25px;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+	    }
+
+	    &__nav {
+		h4 {
+		    font-style: italic;
+		    font-weight: 600;
+		    margin-bottom: 25px;
+		}
+	    }
+
+	    &__tab {
+		width: fit-content;
+		position: relative;
+		color: $primary;
+
+		&:not(:last-of-type) {
+		    margin-bottom: 15px;
+		}
+
+		&::after {
+		    content: '';
+		    width: 100%;
+		    height: 1px;
+		    position: absolute;
+		    left: 0;
+		    bottom: -4px;
+		    background-color: $secondary;
+		    transform: scaleX(0);
+		    transition: transform .3s ease;
+		}
+
+		&:hover::after {
+		    transform-origin: center;
+		    transform: scaleX(1);
+		}
+
+		&.tab--active {
+		    &::after {
+			transform-origin: center;
+			transform: scaleX(1);
+		    }
+		}
+	    }
+
+	    &__description {
+		min-height: 350px;
+		@include media-breakpoint-up(lg) {
+		    padding-left: 50px;
+		}
+
+		& > div {
+		    @include media-breakpoint-up(lg) {
+			max-width: 85%;
+		    }
+
+		    p:not(:last-of-type) {
+			margin-bottom: 30px;
+		    }
+		}
+	    }
+	}
+    }
+
+    &__form {
+	padding: 0 25px;
+	margin-bottom: 80px;
+	@include media-breakpoint-up(lg) {
+	    padding: 0 120px;
+	    margin-bottom: 120px;
+	}
+
+	& > h3 {
+	    margin-bottom: 40px;
+	    @include media-breakpoint-up(lg) {
+		margin-bottom: 80px;
+	    }
+	}
+
+	& > form {
+	    @include media-breakpoint-up(lg) {
+		max-width: 745px;
+		margin-left: auto;
+		margin-right: 80px;
+		& > input {
+		    margin-bottom: 70px;
+		}
+	    }
+
+	    & > div {
+		@include media-breakpoint-up(lg) {
+		    width: 100%;
+		    display: grid;
+		    grid-template-columns: repeat(2, 50%);
+		    grid-gap: 50px;
+		    margin-bottom: 85px;
+		}
+	    }
+
+	    input {
+		@extend %input-reset;
+		width: 100%;
+		padding-bottom: 15px;
+		border-bottom: 1px solid rgba($black, 0.2);
+		@include placeholder-color($black);
+		@include media-breakpoint-down(lg) {
+		    margin-bottom: 25px;
+		}
+	    }
+	}
+    }
+}

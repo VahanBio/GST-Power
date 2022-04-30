@@ -25,7 +25,7 @@ span {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     @include media-breakpoint-down(lg) {
-        letter-spacing: 1.2px;
+	letter-spacing: 1.2px;
     }
 }
 
@@ -58,10 +58,10 @@ span {
 	top: 0;
 	left: 0;
 	background-color: $red-500;
-        @include media-breakpoint-up(lg) {
-            width: 4px;
-            left: -1px;
-        }
+	@include media-breakpoint-up(lg) {
+	    width: 4px;
+	    left: -1px;
+	}
     }
 }
 
@@ -79,7 +79,7 @@ span {
     flex-direction: column;
 }
 
-%justify-center{
+%justify-center {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -89,4 +89,11 @@ span {
     padding: 0;
     background-color: transparent;
     border: none;
+}
+
+%input-reset{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
 }

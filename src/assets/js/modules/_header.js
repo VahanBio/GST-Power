@@ -16,6 +16,7 @@ export default class Header {
     }
 
     stickyHeader() {
+        //Home Header
         if ($(window).width() >= 992) {
             const timeline = gsap
                 .timeline({
@@ -29,14 +30,14 @@ export default class Header {
                         trigger: '.header__home',
                         start: 'top top',
                         toggleActions: 'play none none reverse',
-                        end: '+=80000000000',
+                        end: document.body.scrollHeight,
                         pinSpacing: false,
                         pin: true,
                         top: 0,
                         anticipatePin: 1,
                         refreshPriority: 1,
                         onEnter: () => {
-                            timeline.timeScale(2.5);
+                            timeline.timeScale(2.5)
                         },
                     },
                 })
@@ -52,6 +53,26 @@ export default class Header {
                     duration: 0.3,
                 })
         }
+
+        //Main Header
+        const tl = gsap
+            .timeline({
+                scrollTrigger: {
+                    trigger: '.header__main',
+                    start: 'top top',
+                    toggleActions: 'play none none reverse',
+                    end: document.body.scrollHeight,
+                    pinSpacing: false,
+                    pin: true,
+                    top: 0,
+                    anticipatePin: 1,
+                    refreshPriority: 1,
+                    onEnter: () => {
+                        tl.timeScale(2.5);
+                    }
+                }
+            })
+            .progress(1);
     }
 
     navMobile() {

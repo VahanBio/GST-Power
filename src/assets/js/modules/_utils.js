@@ -60,18 +60,3 @@ export function clickOutSide(config) {
 
     document.addEventListener('click', handleClick);
 }
-
-//example
-// clickOutSide({
-//     ele: selector,
-//     preventEle: optional (selector / array of selector . callback function won't execute when click on any of preventElement),
-//     callback: function(el) {}
-// })
-
-// clickOutSide({
-//     ele: '.navbar',
-//     preventEle: '.reset' / ['ele1', 'ele2'],
-//     callback: (ele) => {
-//         console.log(ele)
-//     },
-// });
