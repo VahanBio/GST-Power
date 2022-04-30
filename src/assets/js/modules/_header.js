@@ -47,7 +47,6 @@ export default class Header {
                     visibility: 'visible',
                     duration: 0.5,
                 })
-            timeline
                 .to('.header__inner', {
                     backgroundColor: 'rgb(18, 41, 52)',
                     duration: 0.3,

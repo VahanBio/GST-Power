@@ -25,7 +25,7 @@ export default class Home {
                 backgroundColor: 'rgba(18, 41, 52, 0.6)',
                 delay: 0.2,
                 duration: 1.2,
-                ease: 'Power2.easeOut',
+                ease: 'Power2.easeOut'
             })
     }
 
@@ -50,7 +50,7 @@ export default class Home {
                     }
                 },
                 onUpdate: () => {
-                    count.text(zero.val.toFixed(decimals));
+                    count.text(zero.val.toFixed(decimals))
                 }
             });
         });
@@ -72,7 +72,7 @@ export default class Home {
             });
             tl.to('.achievement__image', {
                 maxWidth: '720px',
-                duration: 4,
+                duration: 4
             })
         }
     }
