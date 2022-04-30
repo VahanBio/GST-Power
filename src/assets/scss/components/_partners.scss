@@ -1,0 +1,62 @@
+//Partners
+.partners {
+    $partners: #{&};
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+	padding-top: 120px;
+	padding-bottom: 120px;
+    }
+
+    &__logo {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	transform: rotate(45deg) scale(3);
+	z-index: -1;
+	opacity: 0.4;
+	@include media-breakpoint-up(lg) {
+	    top: 50%;
+	    right: -170px;
+	    transform: rotate(30deg) scale(1.4);
+	}
+    }
+
+    &__container {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(2, 50%);
+	padding: 0 27px;
+	@include media-breakpoint-up(lg) {
+	    grid-template-columns: repeat(4, 1fr);
+	    max-width: 1280px;
+	    margin: 0 auto;
+	    padding: 0 80px;
+	}
+
+	&:hover {
+	    #{$partners}__link > img {
+		opacity: 0.4;
+	    }
+	}
+    }
+
+    &__link {
+	@for $i from 1 through 10 {
+	    &:nth-child(#{$i}) {
+		animation-delay: #{$i * 0.2}s;
+	    }
+	}
+
+	&:hover > img {
+	    opacity: 1 !important;
+	    transform: scale(1.1);
+	}
+
+	& > img {
+	    transition: all 0.5s;
+	    height: 200px;
+	}
+    }
+}

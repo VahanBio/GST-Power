@@ -14,13 +14,16 @@
 @import './components/animated-lines';
 @import './components/animation';
 @import './components/buttons';
-@import './components/nav';
 @import './components/swiper';
 @import './components/info';
+@import './components/partners';
+@import './components/tab';
 
 // Layouts
 @import './layouts/header';
+@import './layouts/nav';
 @import './layouts/footer';
 
 // Pages
 @import './pages/home';
+@import './pages/services';

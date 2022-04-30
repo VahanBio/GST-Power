@@ -1,9 +1,9 @@
 <header class="header">
-    <div class="header__inner {{#ifpage 'index'}}header__home{{/ifpage}} fade-on-scroll">
+    <div class="header__inner {{#ifpage 'index'}}header__home{{/ifpage}} {{#unlesspage 'index'}}header__main{{/unlesspage}} fade-on-scroll">
         <nav class="nav">
             <div class="nav__inner">
                 <a href="/" class="nav__logo">
-                    <img class=" object-cover" src="./assets/images/svgs/sidebar-logo.svg" alt="Side Logo">
+                    <img class="object-cover" src="./assets/images/svgs/sidebar-logo.svg" alt="Side Logo">
                 </a>
                 <ul class="nav__list">
                     <!--If you want to use title as link, remove 'dropdown--toggle' class-->

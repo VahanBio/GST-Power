@@ -42,7 +42,7 @@
         "webpack-stream": "^6.1.0"
     },
     "description": "",
-    "author": "VB",
+    "author": "VahanBio",
     "browserslist": [
         "last 1 version",
         "> 1%",

@@ -5,6 +5,7 @@
     }
 
     &__home {
+	background-color: rgba($primary, 0.6);
 	@include media-breakpoint-up(lg) {
 	    position: absolute;
 	    left: 0 !important;
@@ -21,10 +22,20 @@
 	}
     }
 
+    &__main {
+	background-color: $primary !important;
+
+	.nav__logo {
+	    @include media-breakpoint-up(lg) {
+		margin-right: 30px;
+	    }
+	}
+    }
+
     &__inner {
 	padding: 15px;
 	width: 100% !important;
-	background-color: rgba($blue-600, 0.6);
+	background-color: rgba($primary, 0.6);
 	transition: background-color .5s ease;
 	@include media-breakpoint-up(lg) {
 	    padding: 20px 15px;
@@ -37,7 +48,7 @@
 	}
 
 	&.sidebar--open {
-	    background-color: $blue-600;
+	    background-color: $primary;
 	}
     }
 }
