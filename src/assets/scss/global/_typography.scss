@@ -45,7 +45,7 @@ h2,
 h3, .h3 {
     font-size: $h3-font-size-m;
     font-family: $font-family-secondary;
-    font-weight: 800;
+    font-weight: 600;
     @include media-breakpoint-up(lg) {
 	font-size: $h3-font-size;
     }
