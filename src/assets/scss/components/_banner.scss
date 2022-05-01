@@ -1,0 +1,29 @@
+.banner {
+    width: 100%;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+	max-height: 350px;
+	overflow: hidden;
+    }
+    @include media-breakpoint-down(lg){
+	height: 30vh;
+    }
+
+    &__background {
+	height: 100%;
+
+    }
+
+    &__title {
+	@include center(both);
+	z-index: 1;
+	@include media-breakpoint-down(lg){
+	    width: fit-content;
+	}
+
+	h1 {
+	    font-weight: 800;
+	    color: $white;
+	}
+    }
+}
