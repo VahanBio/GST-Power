@@ -90,10 +90,11 @@ export default class Home {
                 let
                     mX = e.pageX,
                     mY = e.pageY;
+
                 const item = $(el);
 
                 const
-                    customDist = item.data('dist') * 20 || 120,
+                    customDist = item.data('dist') * 40 || 120,
                     centerX = item.offset().left + (item.width() / 2),
                     centerY = item.offset().top + (item.height() / 2);
 
