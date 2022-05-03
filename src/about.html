@@ -4,9 +4,62 @@ title: GST Power | About
 ---
 
 <!--Begin About Hero-->
-<section class="about">
-
+<section class="about__hero">
+    <div class="about__hero--inner animate-on-scroll">
+        <h1><span>Who We Are ?</span></h1>
+        <p>We're a team of creatives who are excited about unique ideas and help fin-tech companies to create amazing
+            identity by crafting top-notch UI/UX.</p>
+    </div>
 </section>
 <!--./End About Hero-->
 
+<!--Begin About Info-->
+<section class="about__info">
+    <div class="about__info--inner animate-on-scroll">
+        <h3>THE PROJECT</h3>
+        <p>Our state of the art gyms provide you with a great place to work out in Our state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out inOur state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out in</p>
+        <h3>OUR PLAN</h3>
+        <p>Our state of the art gyms provide you with a great place to work out in Our state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out inOur state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out in</p>
+        <h3>THE PROJECT</h3>
+        <p>Our state of the art gyms provide you with a great place to work out in Our state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out inOur state of the art gyms provide you
+            with a great place to work out inOur state of the art gyms provide you with a great place to work out inOur
+            state of the art gyms provide you with a great place to work out in</p>
+    </div>
+</section>
+<!--./End About Info-->
+
+<!--Begin About Slider-->
+<section class="about__slider">
+    <div class="swiper" id="about-slider">
+        <div class="swiper-wrapper">
+            {{#each articles.AboutSlider}}
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <picture>
+                        <source media="(min-width: 992px)" data-srcset="{{this.imageUrl}}">
+                        <source media="(min-width: 325px)" data-srcset="{{this.imageUrl}}">
+                        <img class="lazy object-cover" data-src="{{this.imageUrl}}"
+                             alt="Home Hero">
+                    </picture>
+                    <h3>{{this.title}}</h3>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+<!--./End About Slider-->
+
+<!--Begin About Partners-->
 {{> partners}}
+<!--./End About Partners-->

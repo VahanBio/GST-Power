@@ -4,12 +4,20 @@ import SmoothScroll from "./modules/_smooth-scroll";
 import Header from "./modules/_header";
 import Animate from "./modules/_animation";
 import Home from "./modules/_home";
+import Partners from "./modules/_partners";
+import Slider from "./modules/_slider";
+
+const slider = new Slider()
 
 $(document).ready(() => {
     new LazyLoad()
+    // new SmoothScroll()
     new Header()
     new Home()
-    // new SmoothScroll()
+    new Partners()
+
+    //Sliders
+    slider.initAboutSlider()
 
     new Animate('.fade-on-scroll', {
         animateClassName: 'animate',

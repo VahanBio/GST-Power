@@ -20,5 +20,27 @@
       "title": "Sweet Berry Pie",
       "subTitle": "Web, Digital, Development"
     }
+  ],
+  "AboutSlider": [
+    {
+      "imageUrl": "./assets/images/about/slide-img-1-desk.jpg",
+      "title": "Nihada"
+    },
+    {
+      "imageUrl": "./assets/images/about/slide-img-2-desk.jpg",
+      "title": "Goddess Cover Art"
+    },
+    {
+      "imageUrl": "./assets/images/about/slide-img-3-desk.jpg",
+      "title": "Hard Employee"
+    },
+    {
+      "imageUrl": "./assets/images/about/slide-img-4-desk.jpg",
+      "title": "Sweet Berry Pie"
+    },
+    {
+      "imageUrl": "./assets/images/about/slide-img-5-desk.jpg",
+      "title": "Sweet Berry Pie"
+    }
   ]
 }
