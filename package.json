@@ -6,7 +6,7 @@
         "build": "gulp build"
     },
     "dependencies": {
-        "gsap": "^3.9.1",
+        "gsap": "^3.10.4",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-svg-sprite": "^1.5.0",
         "jquery": "^3.6.0",

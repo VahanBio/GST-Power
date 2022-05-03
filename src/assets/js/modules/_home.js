@@ -1,7 +1,7 @@
 import $ from 'jquery'
-import {gsap, ScrollTrigger} from "gsap/all";
+import {gsap, ScrollTrigger, TweenLite} from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, TweenLite)
 
 export default class Home {
     constructor() {
@@ -12,7 +12,22 @@ export default class Home {
         this.HPLeftRightAnim()
         this.AchievementCounter()
         this.AchievementImgScale()
-        this.MagnetPartnerIcons()
+    }
+    magnetIcons() {
+        $('.partners__container').mousemove(function(event){
+            $(".partners__link > img").each(function(index, element){
+                var xPos = (event.clientX/$(window).width())-0.5,
+                    yPos = (event.clientY/$(window).height())-0.5,
+                    box = element;
+
+                TweenLite.to(box, 0.6, {
+                    rotationY: xPos * 100,
+                    rotationX: -yPos * 100,
+                    ease: 'Power4.easeOut',
+                });
+
+            })
+        });
     }
 
     HPLeftRightAnim() {
@@ -75,53 +90,6 @@ export default class Home {
                 maxWidth: '720px',
                 duration: 4
             })
-        }
-    }
-
-    MagnetPartnerIcons() {
-        if ($(window).width() >= 992) {
-            $(document).on('mousemove touch', function (e) {
-                $('.magnetize').each(function () {
-                    magnetize(this, e);
-                });
-            });
-
-            function magnetize(el, e) {
-                let
-                    mX = e.pageX,
-                    mY = e.pageY;
-                const item = $(el);
-
-                const
-                    customDist = item.data('dist') * 20 || 120,
-                    centerX = item.offset().left + (item.width() / 2),
-                    centerY = item.offset().top + (item.height() / 2);
-
-                let
-                    deltaX = Math.floor((centerX - mX)) * -0.45,
-                    deltaY = Math.floor((centerY - mY)) * -0.45,
-                    distance = calculateDistance(item, mX, mY);
-
-                if (distance < customDist) {
-                    gsap.to(item, 0.5,
-                        {
-                            y: deltaY,
-                            x: deltaX,
-                        }
-                    );
-                } else {
-                    gsap.to(item, 0.6,
-                        {
-                            y: 0,
-                            x: 0
-                        }
-                    );
-                }
-            }
-
-            function calculateDistance(elem, mouseX, mouseY) {
-                return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) + Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
-            }
         }
     }
 }

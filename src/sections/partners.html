@@ -1,9 +1,9 @@
 <!--Begin Partners-->
 <section class="info partners">
     {{> info-inner
-        strokeText="Our"
-        title="Partners"
-        description="Relations based on trust."
+    strokeText="Our"
+    title="Partners"
+    description="Relations based on trust."
     }}
     <img class="partners__logo" src="./assets/images/svgs/brand-pattern.svg" alt="">
     <div class="partners__container">
@@ -32,6 +32,8 @@
             <img class="lazy magnetize" data-dist="2" data-src="./assets/images/home/client-08.png" alt="">
         </a>
     </div>
+    {{#ifpage 'index'}}
     {{> animated-lines}}
+    {{/ifpage}}
 </section>
 <!--./End Partners-->

@@ -35,14 +35,3 @@ export default class Animate {
         $window.trigger('scroll');
     }
 }
-
-//usage
-// new Animate('.fade-on-scroll', {
-//     animateClassName : 'animate',
-//     offset : 50,
-// });
-//
-// new Animate('.animate-on-scroll', {
-//     animateClassName : 'animate',
-//     offset : 50,
-// });
