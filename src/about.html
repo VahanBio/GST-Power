@@ -40,15 +40,15 @@ title: GST Power | About
 
 <!--Begin About Slider-->
 <section class="about__slider">
-    <div class="swiper" id="about-slider">
+    <div class="swiper fade-on-scroll" id="about-slider">
         <div class="swiper-wrapper">
             {{#each articles.AboutSlider}}
             <div class="swiper-slide">
                 <div class="slide-content">
                     <picture>
-                        <source media="(min-width: 992px)" data-srcset="{{this.imageUrl}}">
-                        <source media="(min-width: 325px)" data-srcset="{{this.imageUrl}}">
-                        <img class="lazy object-cover" data-src="{{this.imageUrl}}"
+                        <source media="(min-width: 992px)" srcset="{{this.imageUrl}}">
+                        <source media="(min-width: 325px)" srcset="{{this.imageUrl}}">
+                        <img class="object-cover" src="{{this.imageUrl}}"
                              alt="Home Hero">
                     </picture>
                     <h3>{{this.title}}</h3>

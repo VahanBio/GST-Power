@@ -1,7 +1,7 @@
 import $ from 'jquery'
-import {gsap, ScrollTrigger, TweenLite} from "gsap/all";
+import {gsap, ScrollTrigger} from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger, TweenLite)
+gsap.registerPlugin(ScrollTrigger)
 
 export default class Home {
     constructor() {
@@ -12,22 +12,6 @@ export default class Home {
         this.HPLeftRightAnim()
         this.AchievementCounter()
         this.AchievementImgScale()
-    }
-    magnetIcons() {
-        $('.partners__container').mousemove(function(event){
-            $(".partners__link > img").each(function(index, element){
-                var xPos = (event.clientX/$(window).width())-0.5,
-                    yPos = (event.clientY/$(window).height())-0.5,
-                    box = element;
-
-                TweenLite.to(box, 0.6, {
-                    rotationY: xPos * 100,
-                    rotationX: -yPos * 100,
-                    ease: 'Power4.easeOut',
-                });
-
-            })
-        });
     }
 
     HPLeftRightAnim() {

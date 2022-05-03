@@ -11,14 +11,14 @@ export default class SmoothScroll {
 
     init() {
         this.SmoothScroll()
-        this.SmoothScrollGSAP()
+        // this.SmoothScrollGSAP()
     }
 
     SmoothScroll() {
         //Alternative Mobile check
         // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(navigator.userAgent) ? true : false;
 
-        if ($(window).width() <= 991.8) {
+        if ($(window).width() >= 992) {
             let bodyScroll = document.getElementById("scroll-container"),
                 scrollPositionX = 0,
                 scrollPositionY = 0,
