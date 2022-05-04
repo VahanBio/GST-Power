@@ -1,6 +1,13 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 95px;
 }
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
 
 //include normalize
 button,
