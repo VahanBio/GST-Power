@@ -8,11 +8,16 @@
         <!-- Main -->
         <div class="page-content fade-on-scroll">
             <!-- Header -->
-            {{> header }}
+            {{#unlesspage '404'}}
+                {{> header }}
+            {{/unlesspage}}
 
             {{> body }}
+
             <!-- footer -->
-            {{> footer }}
+            {{#unlesspage '404'}}
+                {{> footer }}
+            {{/unlesspage}}
         </div>
     </main>
     <!-- JS -->
