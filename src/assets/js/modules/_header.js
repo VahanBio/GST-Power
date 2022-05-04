@@ -20,12 +20,6 @@ export default class Header {
         if ($(window).width() >= 992) {
             const timeline = gsap
                 .timeline({
-                    onUpdate: () => {
-                        timeline.scrollTrigger.spacer.style.height =
-                            document.querySelector('.header__inner').offsetHeight + 'px';
-                        timeline.scrollTrigger.trigger.style.height =
-                            document.querySelector('.header__inner').offsetHeight + 'px';
-                    },
                     scrollTrigger: {
                         trigger: '.header__home',
                         start: 'top top',

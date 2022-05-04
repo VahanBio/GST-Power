@@ -31,8 +31,8 @@ export default class Partners {
                     deltaY = Math.floor((centerY - mY)) * -0.45,
                     distance = calculateDistance(item, mX, mY);
                 // TweenLite.to(box, 0.6, {
-                //     rotationY: xPos * 100,
-                //     rotationX: -yPos * 100,
+                //     rotationY: centerX * 100,
+                //     rotationX: -centerY * 100,
                 //     ease: 'Power4.easeOut',
                 // });
                 if (distance < customDist) {
