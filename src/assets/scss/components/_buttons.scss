@@ -10,7 +10,7 @@
     }
 
     &-solid {
-	&-primary, &-secondary {
+	&-primary, &-secondary, &-tertiary {
 	    position: relative;
 	    width: fit-content;
 	    font-size: 16px;
@@ -72,6 +72,16 @@
 		    transform: scaleX(1);
 		}
 	    }
+	}
+
+	&-tertiary{
+	    background-color: transparent;
+	    border: 1px solid $white;
+	    color: $white;
+	    border-radius: 5px;
+	    letter-spacing: unset;
+	    font-weight: 600;
+	    padding: 12px;
 	}
     }
 

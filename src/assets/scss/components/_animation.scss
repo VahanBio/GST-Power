@@ -1,5 +1,5 @@
 .animate-on-scroll,
-.fade-on-scroll,
+.fade-on-load,
 .animate-right,
 .animate-left,
 .animate-down {
@@ -12,7 +12,7 @@
     }
 }
 
-.fade-on-scroll.animate {
+.fade-on-load.animate {
     animation-name: fadeIn;
 }
 

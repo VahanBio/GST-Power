@@ -19,7 +19,7 @@ $(document).ready(() => {
     //Sliders
     slider.initAboutSlider()
 
-    new Animate('.fade-on-scroll', {
+    new Animate('.fade-on-load', {
         animateClassName: 'animate',
         offset: 0,
     });

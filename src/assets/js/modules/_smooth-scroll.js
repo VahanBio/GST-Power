@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default class SmoothScroll {
     constructor() {
-        // this.init()
+        this.init()
     }
 
     init() {
@@ -16,7 +16,7 @@ export default class SmoothScroll {
 
     SmoothScroll() {
         //Alternative Mobile check
-        // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(navigator.userAgent) ? true : false;
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(navigator.userAgent) ? true : false;
 
         if ($(window).width() >= 992) {
             let bodyScroll = document.getElementById("scroll-container"),
