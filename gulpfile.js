@@ -23,7 +23,7 @@ const browserSync = require('browser-sync').create();
 /* Paths */
 const srcPath = 'src/';
 const distPath = 'build/';
-const shopPath = 'shopify/assets/';
+const externalPath = 'gst-power/assets/';
 
 const config = {
 	shape: {
@@ -136,7 +136,7 @@ function css(cb) {
 		.pipe(removeComments())
 		.pipe(rename('custom.min.css'))
 		.pipe(dest(path.build.css))
-		.pipe(dest(shopPath))
+		.pipe(dest(externalPath))
 		.pipe(browserSync.reload({stream: true}));
 
 	cb();
@@ -163,7 +163,7 @@ function cssWatch(cb) {
 		)
 		.pipe(sourcemaps.write())
 		.pipe(rename('custom.min.css'))
-		.pipe(dest(shopPath))
+		.pipe(dest(externalPath))
 		.pipe(dest(path.build.css))
 		.pipe(browserSync.reload({stream: true}));
 
@@ -203,7 +203,7 @@ function js(cb) {
 				},
 			})
 		)
-		.pipe(dest(shopPath))
+		.pipe(dest(externalPath))
 		.pipe(dest(path.build.js))
 		.pipe(browserSync.reload({stream: true}));
 
@@ -231,7 +231,7 @@ function jsWatch(cb) {
 				},
 			})
 		)
-		.pipe(dest(shopPath))
+		.pipe(dest(externalPath))
 		.pipe(dest(path.build.js))
 		.pipe(browserSync.reload({stream: true}));
 
@@ -258,7 +258,7 @@ function images(cb) {
 
 function fonts(cb) {
 	return src(path.src.fonts)
-		.pipe(dest(shopPath))
+		.pipe(dest(externalPath))
 		.pipe(dest(path.build.fonts))
 		.pipe(browserSync.reload({stream: true}));
 
