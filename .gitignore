@@ -14,6 +14,8 @@
 /shopify/assets/custom.min.*
 /shopify/config.yml
 
+/gst-power/assets/custom.min.*
+
 # production
 /build
 
