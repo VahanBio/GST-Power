@@ -6,6 +6,7 @@ import Animate from "./modules/_animation";
 import Home from "./modules/_home";
 import Partners from "./modules/_partners";
 import Slider from "./modules/_slider";
+import Plp from "./modules/_plp";
 
 const slider = new Slider()
 
@@ -15,6 +16,7 @@ $(document).ready(() => {
     new Header()
     new Home()
     new Partners()
+    new Plp()
 
     //Sliders
     slider.initAboutSlider()
