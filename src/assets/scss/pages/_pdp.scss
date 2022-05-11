@@ -1,0 +1,40 @@
+.pdp {
+    padding: 50px 27px;
+    @include media-breakpoint-up(lg) {
+	padding: 100px 0;
+    }
+
+    &__hero {
+	display: grid;
+	grid-gap: 25px;
+	@include media-breakpoint-up(lg) {
+	    grid-gap: 80px;
+	    grid-template-columns: repeat(2, 1fr);
+	    max-width: 1300px;
+	    margin: 0 auto;
+	    padding: 0 50px;
+	}
+
+	&--description {
+	    h1 {
+		font-size: 40px;
+		margin-bottom: 20px;
+		@include media-breakpoint-down(lg){
+		    font-size: 28px;
+		}
+	    }
+
+	    h4 {
+		font-weight: 600;
+		margin-bottom: 20px;
+	    }
+
+	    h3 {
+		font-size: 14px;
+		@include media-breakpoint-up(lg){
+		    font-size: 20px;
+		}
+	    }
+	}
+    }
+}
