@@ -6,4 +6,32 @@
 	    display: block;
 	}
     }
+
+    &--button {
+	position: relative;
+	width: fit-content;
+
+	&::after {
+	    content: '';
+	    width: 100%;
+	    height: 1px;
+	    position: absolute;
+	    z-index: 1;
+	    left: 0;
+	    bottom: -5px;
+	    background-color: $secondary;
+	    transform: scaleX(0);
+	    transition: transform .3s ease;
+	}
+
+	&:hover::after {
+	    transform-origin: center;
+	    transform: scaleX(1);
+	}
+    }
+
+    &--active::after {
+	transform-origin: center;
+	transform: scaleX(1);
+    }
 }

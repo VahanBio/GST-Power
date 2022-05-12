@@ -3,6 +3,10 @@
     @include media-breakpoint-up(lg) {
 	padding: 100px 0;
     }
+    @include media-breakpoint-down(lg) {
+	display: grid;
+	grid-gap: 50px;
+    }
 
     &__hero {
 	display: grid;
@@ -11,7 +15,7 @@
 	    grid-gap: 80px;
 	    grid-template-columns: repeat(2, 1fr);
 	    max-width: 1300px;
-	    margin: 0 auto;
+	    margin: 0 auto 150px;
 	    padding: 0 50px;
 	}
 
@@ -19,7 +23,7 @@
 	    h1 {
 		font-size: 40px;
 		margin-bottom: 20px;
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(lg) {
 		    font-size: 28px;
 		}
 	    }
@@ -31,9 +35,112 @@
 
 	    h3 {
 		font-size: 14px;
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(lg) {
 		    font-size: 20px;
 		}
+	    }
+	}
+
+	&--contact {
+	    display: flex;
+	    margin-top: 30px;
+	    border-bottom: 1px solid rgba($black, 0.2);
+	    padding-bottom: 20px;
+	    @include media-breakpoint-up(lg) {
+		padding-bottom: 30px;
+	    }
+
+	    a {
+		width: 20px;
+
+		&:not(:last-of-type) {
+		    margin-right: 15px;
+		}
+	    }
+	}
+
+	&--categories {
+	    display: flex;
+	    align-items: center;
+	    margin-top: 20px;
+	    @include media-breakpoint-up(lg) {
+		margin-top: 30px;
+	    }
+
+	    p {
+		font-weight: 600;
+		margin-right: 10px;
+	    }
+
+	    a {
+		display: inline-block;
+		margin-right: 5px;
+	    }
+	}
+    }
+
+    &__description {
+	position: relative;
+
+	&::after {
+	    content: '';
+	    height: 1px;
+	    width: 100%;
+	    background-color: rgba($black, 0.2);
+	    position: absolute;
+	    left: 0;
+	    top: 17px;
+	    @include media-breakpoint-up(lg) {
+		top: 22px;
+	    }
+	}
+
+	&--nav {
+	    max-width: 680px;
+	    margin: 0 auto 50px;
+	    @include media-breakpoint-down(lg) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	    }
+	    @include media-breakpoint-up(lg) {
+		max-width: 1300px;
+		margin: 0 0 50px auto;
+	    }
+	}
+
+	&--info {
+	    @include media-breakpoint-up(lg) {
+		max-width: 1245px;
+		margin: 0 auto;
+	    }
+
+	    h3 {
+		font-size: 30px;
+		margin-bottom: 20px;
+	    }
+
+	    p {
+		line-height: 25px;
+		margin-bottom: 50px;
+	    }
+	}
+    }
+
+    &__tab {
+	letter-spacing: 1.2px;
+	@include media-breakpoint-down(lg) {
+	    font-size: 11px;
+	}
+
+	&::after {
+	    height: 2px;
+	}
+
+	&:not(:last-of-type) {
+	    margin-right: 10px;
+	    @include media-breakpoint-up(lg) {
+		margin-right: 45px;
 	    }
 	}
     }

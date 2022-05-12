@@ -249,6 +249,9 @@
 
 	    h4 {
 		font-size: 20px;
+		@include media-breakpoint-up(lg) {
+		    font-size: 28px;
+		}
 	    }
 	}
     }

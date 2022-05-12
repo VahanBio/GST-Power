@@ -74,30 +74,46 @@ export default class Header {
             $(this).toggleClass('nav__toggle--active')
             $('.nav__list').toggleClass('nav__list--open')
             $('.header__inner').toggleClass('sidebar--open')
-            $('.dropdown--toggle')
-                .next().slideUp()
-                .parent().removeClass('nav__list--item--open')
+            $('.nav__list--item').each(function () {
+                const $this = $(this)
+                if ($this.hasClass('menu-item-has-children')) {
+                    $this
+                        .removeClass('nav__list--item--open')
+                        .find('.nav__list--dropdown').slideUp()
+                }
+            })
         })
     }
 
     navDropdowns() {
         if ($(window).width() <= 991.8) {
-            $(document).on('click', '.dropdown--toggle', function () {
-                const $this = $(this);
-                $this.parent().toggleClass('nav__list--item--open')
-                $this.next().slideToggle();
+            $('.nav__list--item').each(function () {
+                const $this = $(this)
+                if ($this.hasClass('menu-item-has-children')) {
+                    $this.find('.nav__list--toggler').on('click', function (e) {
+                        e.preventDefault()
+                        $this
+                            .toggleClass('nav__list--item--open')
+                            .find('.nav__list--dropdown').slideToggle()
+                    })
+                }
             })
         }
 
         if ($(window).width() >= 992) {
             $('.nav__list--item').each(function () {
-                $(this).find('.dropdown--toggle').on('click', function (e) {
-                    e.preventDefault()
-                    $(this).parent().addClass('nav__list--active')
-                    $('.nav__list').addClass('nav__list--open')
-                    $(this).siblings('.nav__list--dropdown').addClass('nav__list--dropdown--open')
-                    $('.dropdown--close').addClass('active')
-                })
+                const $this = $(this)
+                if ($this.hasClass('menu-item-has-children')) {
+                    $this.find('.nav__list--toggler').on('click', function (e) {
+                        e.preventDefault()
+                        $this.addClass('nav__list--active')
+                        $('.nav__list').addClass('nav__list--open')
+                        $this.find('.nav__list--dropdown').addClass('nav__list--dropdown--open')
+                        $('.dropdown--close').addClass('active')
+                        $('.lang-wrapper').addClass('hide')
+                        $('.sub-lang').removeClass('active')
+                    })
+                }
             })
 
             $('.dropdown--close').on('click', function () {
@@ -105,6 +121,8 @@ export default class Header {
                 $('.nav__list--item').removeClass('nav__list--active')
                 $('.nav__list').removeClass('nav__list--open')
                 $('.nav__list--dropdown').removeClass('nav__list--dropdown--open')
+                $('.lang-wrapper').removeClass('hide')
+                $('.sub-lang').removeClass('active')
             })
 
             clickOutSide({
@@ -114,8 +132,21 @@ export default class Header {
                     $('.nav__list--item').removeClass('nav__list--active')
                     $('.nav__list').removeClass('nav__list--open')
                     $('.nav__list--dropdown').removeClass('nav__list--dropdown--open')
+                    $('.lang-wrapper').removeClass('hide')
+                    $('.sub-lang').removeClass('active')
                 }
             })
         }
+
+        $('.lang-wrapper').on('click', function () {
+            $('.sub-lang').toggleClass('active')
+        })
+
+        clickOutSide({
+            ele: '.lang-wrapper',
+            callback: () => {
+                $('.sub-lang').removeClass('active')
+            }
+        })
     }
 }
