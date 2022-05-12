@@ -24,7 +24,7 @@
 	}
 
 	#{$footer} {
-	    &__description, &__list {
+	    &__description, &__list--wrapper {
 		padding: 25px 15px;
 		@include media-breakpoint-up(lg) {
 		    padding: 50px 38px;
@@ -48,18 +48,25 @@
 	    }
 
 	    &__list {
-		&:first-of-type {
-		    @include media-breakpoint-down(lg) {
-			border-top: 1px solid rgba($white, 0.4);
-			border-bottom: 1px solid rgba($white, 0.4);
-		    }
-		    @include media-breakpoint-up(lg) {
-			border-left: 1px solid rgba($white, 0.4);
-			border-right: 1px solid rgba($white, 0.4);
+		&--wrapper {
+		    h3 {
+			color: $white;
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 25px;
 		    }
 
-		    #{$footer}__list--item {
-			&:not(:first-of-type) {
+		    &:nth-of-type(2) {
+			@include media-breakpoint-down(lg) {
+			    border-top: 1px solid rgba($white, 0.4);
+			    border-bottom: 1px solid rgba($white, 0.4);
+			}
+			@include media-breakpoint-up(lg) {
+			    border-left: 1px solid rgba($white, 0.4);
+			    border-right: 1px solid rgba($white, 0.4);
+			}
+
+			#{$footer}__list--item {
 			    position: relative;
 			    padding-left: 15px;
 
@@ -85,16 +92,6 @@
 		    img {
 			width: 11px;
 			margin-right: 10px;
-		    }
-
-		    &:first-of-type {
-			margin-bottom: 25px;
-		    }
-
-		    &.h3 {
-			color: $white;
-			font-size: 18px;
-			font-weight: 600;
 		    }
 		}
 	    }
