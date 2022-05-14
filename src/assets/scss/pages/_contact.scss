@@ -50,7 +50,7 @@
 	    max-width: 1530px;
 	}
 
-	& > form {
+	form {
 	    .input-wrapper {
 		display: grid;
 		grid-gap: 40px;
@@ -76,7 +76,7 @@
 		}
 	    }
 
-	    input {
+	    input:not([type="submit"]) {
 		@extend %input-reset;
 		background-color: transparent;
 		border-bottom: 1px solid $white;
@@ -85,6 +85,14 @@
 		@include media-breakpoint-up(lg) {
 		    font-size: 18px;
 		}
+	    }
+
+	    span {
+		display: block;
+		color: $secondary;
+		margin-top: 5px;
+		-webkit-text-fill-color: unset;
+		-webkit-text-stroke-width: unset;
 	    }
 
 	    textarea {
@@ -101,13 +109,19 @@
 		    margin-bottom: 30px;
 		}
 	    }
+
+	    .wpcf7-response-output {
+		color: $secondary;
+		font-size: 18px;
+		margin-top: 20px;
+	    }
 	}
     }
 
     &__details {
 	div:not(:last-of-type) {
 	    margin-bottom: 45px;
-	    @include media-breakpoint-up(lg){
+	    @include media-breakpoint-up(lg) {
 		margin-bottom: 60px;
 	    }
 	}

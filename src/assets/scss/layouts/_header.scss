@@ -367,6 +367,9 @@
 	    height: 12px;
 	    margin-left: 5px;
 	    transition: transform .5s ease;
+	    @include media-breakpoint-down(lg){
+		display: none;
+	    }
 	}
 
 	.languages {
@@ -436,13 +439,11 @@
 			}
 
 			li {
-			    @include media-breakpoint-up(lg){
-				transition: background-color .5s ease-in-out;
-				padding: 5px 13px;
-				&:hover {
-				    span {
-					color: $secondary;
-				    }
+			    transition: background-color .5s ease-in-out;
+			    padding: 5px 13px;
+			    &:hover {
+				span {
+				    color: $secondary;
 				}
 			    }
 			}

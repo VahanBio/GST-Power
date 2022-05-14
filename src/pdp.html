@@ -4,7 +4,8 @@ title: GST Power | PDP
 ---
 
 <div class="pdp">
-    <section class="pdp__hero">
+    <!--Begin PDP Hero-->
+    <section class="pdp__hero animate-on-scroll">
         <picture class="pdp__hero--img">
             <source media="(min-width: 992px)" data-srcset="/assets/images/pdp/product-img.png">
             <source media="(min-width: 325px)" data-srcset="/assets/images/pdp/product-img.png">
@@ -35,23 +36,183 @@ title: GST Power | PDP
             </div>
         </div>
     </section>
-    <section class="pdp__description">
+    <!--./End PDP Hero-->
+
+    <!--Begin Description-->
+    <section class="pdp__description animate-on-scroll">
         <div class="pdp__description--nav">
             <a href="#features" class="pdp__tab tab--button tab--active">FEATURES</a>
             <a href="#characteristic" class="pdp__tab tab--button">CHARACTERISTIC</a>
             <a href="#product-question" class="pdp__tab tab--button">PRODUCT QUESTION</a>
         </div>
         <div class="pdp__description--info">
-            <div class="tab--content" id="features">
-                <h3>Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et exercitationem maxime rem
-                    tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam quisquam quo suscipit. Incidunt
-                    rem tempore unde!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et
-                    exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam
-                    quisquam quo suscipit. Incidunt rem tempore unde!Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Eligendi et exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in minima
-                    nam quibusdam quisquam quo suscipit. Incidunt rem tempore unde!</p>
+            <div class="tab--content animate-on-scroll" id="features">
+                <div class="pdp__content">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et exercitationem maxime rem
+                        tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam quisquam quo suscipit.
+                        Incidunt
+                        rem tempore unde!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et
+                        exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam
+                        quisquam quo suscipit. Incidunt rem tempore unde!Lorem ipsum dolor sit amet, consectetur
+                        adipisicing
+                        elit. Eligendi et exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in
+                        minima
+                        nam quibusdam quisquam quo suscipit. Incidunt rem tempore unde!</p>
+                </div>
+            </div>
+            <div class="tab--content animate-on-scroll" id="characteristic">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title 1</th>
+                        <th>Title 2</th>
+                        <th>Title 3</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>Desc1</td>
+                        <td>Desc2</td>
+                        <td>Desc3</td>
+                    </tr>
+                    <tr>
+                        <td>Desc1</td>
+                        <td>Desc2</td>
+                        <td>Desc3</td>
+                    </tr>
+                </table>
+                <!--                <div class="pdp__content">-->
+                <!--                    <h3>Title Desc 2</h3>-->
+                <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et exercitationem maxime rem-->
+                <!--                        tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam quisquam quo suscipit. Incidunt-->
+                <!--                        rem tempore unde!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi et-->
+                <!--                        exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in minima nam quibusdam-->
+                <!--                        quisquam quo suscipit. Incidunt rem tempore unde!Lorem ipsum dolor sit amet, consectetur adipisicing-->
+                <!--                        elit. Eligendi et exercitationem maxime rem tenetur. Assumenda autem, blanditiis ea eius in minima-->
+                <!--                        nam quibusdam quisquam quo suscipit. Incidunt rem tempore unde!</p>-->
+                <!--                </div>-->
+            </div>
+            <div class="tab--content animate-on-scroll" id="product-question">
+                <form action="#">
+                    <div class="input-wrapper">
+                        <div>
+                            <label for="comp-name">Name (Company Name)</label>
+                            <input type="text" id="comp-name" placeholder="Ex. Name, Last Name">
+                        </div>
+                        <div>
+                            <label for="phone-number">Phone Number</label>
+                            <input type="number" id="phone-number" placeholder="145-958-777">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="test0@gmail.com">
+                        </div>
+                        <div>
+                            <label for="message-to-us">Message</label>
+                            <textarea name="" id="message-to-us" placeholder="Your Message to Us"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-solid-quaternary" value="SEND">
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+    <!--./End Description-->
+
+    <!--Begin Related Products-->
+    <section class="pdp__related animate-on-scroll">
+        <h2>RELATED <span>PRODUCTS</span></h2>
+        <div class="related__slider">
+            <div class="swiper" id="related--slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#." class="pdp__related--product">
+                            <figure>
+                                <picture>
+                                    <source media="(min-width: 992px)" data-srcset="/assets/images/blogs/blog-1.png">
+                                    <source media="(min-width: 325px)" data-srcset="/assets/images/blogs/blog-1.png">
+                                    <img class="lazy object-cover" data-src="/assets/images/blogs/blog-1.png"
+                                         alt="Home Hero">
+                                </picture>
+                                <figcaption>
+                                    <h4>Lorem Ipsum</h4>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#." class="pdp__related--product">
+                            <figure>
+                                <picture>
+                                    <source media="(min-width: 992px)" data-srcset="/assets/images/blogs/blog-1.png">
+                                    <source media="(min-width: 325px)" data-srcset="/assets/images/blogs/blog-1.png">
+                                    <img class="lazy object-cover" data-src="/assets/images/blogs/blog-1.png"
+                                         alt="Home Hero">
+                                </picture>
+                                <figcaption>
+                                    <h4>Lorem Ipsum</h4>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#." class="pdp__related--product">
+                            <figure>
+                                <picture>
+                                    <source media="(min-width: 992px)" data-srcset="/assets/images/blogs/blog-2.png">
+                                    <source media="(min-width: 325px)" data-srcset="/assets/images/blogs/blog-2.png">
+                                    <img class="lazy object-cover" data-src="/assets/images/blogs/blog-2.png"
+                                         alt="Home Hero">
+                                </picture>
+                                <figcaption>
+                                    <h4>Lorem Ipsum</h4>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#." class="pdp__related--product">
+                            <figure>
+                                <picture>
+                                    <source media="(min-width: 992px)" data-srcset="/assets/images/blogs/blog-3.png">
+                                    <source media="(min-width: 325px)" data-srcset="/assets/images/blogs/blog-3.png">
+                                    <img class="lazy object-cover" data-src="/assets/images/blogs/blog-3.png"
+                                         alt="Home Hero">
+                                </picture>
+                                <figcaption>
+                                    <h4>Lorem Ipsum</h4>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#." class="pdp__related--product">
+                            <figure>
+                                <picture>
+                                    <source media="(min-width: 992px)" data-srcset="/assets/images/blogs/blog-4.png">
+                                    <source media="(min-width: 325px)" data-srcset="/assets/images/blogs/blog-4.png">
+                                    <img class="lazy object-cover" data-src="/assets/images/blogs/blog-4.png"
+                                         alt="Home Hero">
+                                </picture>
+                                <figcaption>
+                                    <h4>Lorem Ipsum</h4>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-progressbar">
+                    <div class="swiper-progressbar__line"></div>
+                    <div class="swiper-progress__fill"></div>
+                </div>
+            </div>
+            <button class="related__slider--prev">
+                <img src="./assets/images/svgs/chevron-left.svg" alt="slide-next">
+            </button>
+            <button class="related__slider--next">
+                <img src="./assets/images/svgs/chevron-right.svg" alt="slide-next">
+            </button>
+        </div>
+    </section>
+    <!--./End Related Products-->
 </div>

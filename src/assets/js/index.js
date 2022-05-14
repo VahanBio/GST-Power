@@ -10,6 +10,11 @@ import Plp from "./modules/_plp";
 
 const slider = new Slider()
 
+// Reload page after screen resize
+// $(window).on('resize', function () {
+//     location.reload();
+// });
+
 $(document).ready(() => {
     new LazyLoad()
     // new SmoothScroll()
@@ -20,6 +25,7 @@ $(document).ready(() => {
 
     //Sliders
     slider.initAboutSlider()
+    slider.initRelatedSlider()
 
     new Animate('.fade-on-load', {
         animateClassName: 'animate',

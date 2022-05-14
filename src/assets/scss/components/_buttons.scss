@@ -10,7 +10,7 @@
     }
 
     &-solid {
-	&-primary, &-secondary, &-tertiary {
+	&-primary, &-secondary, &-tertiary, &-quaternary {
 	    position: relative;
 	    width: fit-content;
 	    font-size: 16px;
@@ -78,10 +78,25 @@
 	    background-color: transparent;
 	    border: 1px solid $white;
 	    color: $white;
-	    border-radius: 5px;
+	    border-radius: 5px !important;
 	    letter-spacing: unset;
 	    font-weight: 600;
 	    padding: 12px;
+	}
+
+	&-quaternary {
+	    color: $white;
+	    background-color: $primary;
+	    border: 2px solid $primary;
+	    border-radius: 6px !important;
+	    padding: 13px 31px 13px 31px;
+	    vertical-align: middle;
+	    transition: .5s ease;
+
+	    &:hover {
+		background-color: $white;
+		color: $primary;
+	    }
 	}
     }
 

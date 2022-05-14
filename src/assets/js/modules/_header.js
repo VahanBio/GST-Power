@@ -18,6 +18,14 @@ export default class Header {
     stickyHeader() {
         //Home Header
         if ($(window).width() >= 992) {
+
+            // Language Bar
+            $(window).on('load', function () {
+                if ($('.header__inner').hasClass('header__home')) {
+                    $('#lang-wrapper').appendTo('.sidebar__lang')
+                }
+            })
+
             const timeline = gsap
                 .timeline({
                     scrollTrigger: {
@@ -32,7 +40,15 @@ export default class Header {
                         refreshPriority: 1,
                         onEnter: () => {
                             timeline.timeScale(2.5)
+                            $('#lang-wrapper').appendTo('.header__lang')
+                            $('.sidebar__lang').css('opacity', '0')
                         },
+                        onLeaveBack: () => {
+                            $('#lang-wrapper').appendTo('.sidebar__lang')
+                            setTimeout(() => {
+                                $('.sidebar__lang').css('opacity', '1')
+                            }, 500)
+                        }
                     },
                 })
                 .progress(0.5);
@@ -98,6 +114,7 @@ export default class Header {
                     })
                 }
             })
+            $('#lang-wrapper').appendTo('#mob-nav')
         }
 
         if ($(window).width() >= 992) {
@@ -149,4 +166,5 @@ export default class Header {
             }
         })
     }
+
 }
